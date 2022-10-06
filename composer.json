@@ -1,0 +1,20 @@
+{
+    "name": "tonyt/php-blog-oc",
+    "description": "Projet 5",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tonyttillet",
+            "email": "tony@wagaia.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.4",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

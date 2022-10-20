@@ -3,6 +3,9 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'vendo
 
 use App\Controller\HomeController;
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'../');
+$dotenv->load();
+
 $homeController = new HomeController();
 
 $homeController->index();

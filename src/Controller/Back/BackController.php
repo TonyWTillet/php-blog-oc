@@ -14,7 +14,6 @@ class BackController
     {
 
         if (!isset($_SESSION['user'])) {
-            die('not logged in');
             header("location:".PANEL."login/logger");
             exit();
         }

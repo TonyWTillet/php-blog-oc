@@ -1,7 +1,11 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 $siteName= "Blog";
 $abspath = $_SERVER['DOCUMENT_ROOT'] . '/';
-$http = 'https://triathlon.test/';
+
+$http = 'https://php-blog-oc.test/';
 
 define('SITE', $siteName);
 define('ABSPATH', $abspath);

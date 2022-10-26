@@ -6,13 +6,9 @@ class PanelController extends BackController
 {
     public function index()
     {
-
-        if(!isset($_SESSION['users'])) {
-            header("Location: ".PANEL."login");
-            exit();
-        }
-
-
+        dump($_SESSION['user']);die;
+        $this->login();
+        die('panelcontroller');
     }
 
 }

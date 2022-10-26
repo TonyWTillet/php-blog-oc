@@ -11,7 +11,7 @@ class HomeController
         $link = $_SERVER['REQUEST_URI'];
         $link_array = explode('/',$link);
         $redirect = $link_array[1];
-        dump($link_array);
+
         echo $redirect;
 
         if ($redirect == 'panel') {

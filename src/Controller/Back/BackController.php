@@ -12,25 +12,25 @@ class BackController
      */
     #[NoReturn] public function login(): void
     {
-        if(isset($_SESSION['users']))
-        {
-            header("Location:".PANEL."login");
-        } else {
-            header("Location:".PANEL."index");
-        }
-        exit();
 
+        if (!isset($_SESSION['user'])) {
+            die('not logged in');
+            header("location:".PANEL."login/logger");
+            exit();
+        }
     }
+
 
     /**
      * It checks if the user is logged in.
      */
     public function isLoggin():bool
     {
-        if(isset($_SESSION['users']))
+        if(isset($_SESSION['user']))
         {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 }

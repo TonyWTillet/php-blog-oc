@@ -10,16 +10,18 @@ use JetBrains\PhpStorm\NoReturn;
 
 class LoginController extends BackController
 {
-    #[NoReturn] public function logger()
+
+    /**
+     * It logs in a user
+     */
+    #[NoReturn] public function logger(): void
     {
         global $error;
 
         $user = new User();
-        $logger = new Authenticate();
         $loggin = $this->isLoggin();
-        if(!$loggin)
-        {
 
+        if(!$loggin) {
             if (!empty($_POST['password']) && !empty($_POST['email'])) {
 
                 $email = $_POST['email'];
@@ -29,7 +31,7 @@ class LoginController extends BackController
                 $user_data = $user->getUser($email);
 
                 if(!empty($user_data)) {
-
+                    $logger = new Authenticate();
                     $user_verification = $logger->attempt($password, $user_data['password']);
 
                     if ($user_verification) {
@@ -39,6 +41,7 @@ class LoginController extends BackController
                         header("location:".PANEL."panel/index");
                         exit();
                     } else {
+
                         $error = 'Mot de passe invalide';
                     }
                 } else {
@@ -50,7 +53,7 @@ class LoginController extends BackController
             header("location:".PANEL."dashboard/index");
             exit();
         }
-        require (BACK_VIEW.'login.php');
+        require BACK_VIEW.'login.php';
     }
 
 }

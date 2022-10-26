@@ -10,16 +10,15 @@ use JetBrains\PhpStorm\NoReturn;
 
 class LoginController extends BackController
 {
-    #[NoReturn] public function login()
+    #[NoReturn] public function logger()
     {
         global $error;
 
         $user = new User();
         $logger = new Authenticate();
-        $loggin = $logger->is_loggedin();
+        $loggin = $this->isLoggin();
         if(!$loggin)
         {
-
 
             if (!empty($_POST['password']) && !empty($_POST['email'])) {
 

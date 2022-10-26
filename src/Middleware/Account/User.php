@@ -2,17 +2,28 @@
 
 namespace App\Middleware\Account;
 
+use App\Middleware\Database;
 use PDO;
 use PDOException;
 
-class User
+class User extends Database
 {
-    public function getUser(string $login):array {
+    public function __construct($table = 'blog_users')
+    {
+        parent::__construct($table);
+    }
 
+    /**
+     * It takes an email address as a parameter and returns an array of the user's information
+     *
+     * @param string email The email address of the user you want to get.
+     *
+     * @return array An array of the user's information.
+     */
+    public function getUser(string $email):array {
         try {
-            $pdo = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME.";charset=utf8", DB_USER,DB_PASS);
-            $req = $pdo->prepare("SELECT * FROM users WHERE email=? LIMIT 1");
-            $req->execute(array($login));
+            $req = $this->getPDO()->prepare("SELECT * FROM $this->table WHERE email=? LIMIT 1");
+            $req->execute(array($email));
             $panel_users=$req->fetch(PDO::FETCH_ASSOC);
             if (!$panel_users) {
                 return [];
@@ -25,17 +36,21 @@ class User
 
     }
 
-    public function selectUsers()
+    /**
+     * It selects all users from the database and returns them as an object
+     *
+     * @return \stdClass An object
+     */
+    public function selectUsers(): \stdClass
     {
-        global $pdo, $globale;
         try {
-            $req = $pdo->prepare("SELECT id, user, email, role FROM users");
+            $req = $pdo->prepare("SELECT id, user, email, role FROM $this->table ORDER BY first_name ASC");
             $req->execute(array());
-            $globale = $req->fetchAll(PDO::FETCH_OBJ);
-            if (!$globale) {
+            $users = $req->fetchAll(PDO::FETCH_OBJ);
+            if (!$users) {
                 return new \stdClass();
             }
-            return $globale;
+            return $users;
         } catch(PDOException $e) {
             echo $e->getMessage();
         }

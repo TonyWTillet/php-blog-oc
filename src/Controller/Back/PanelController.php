@@ -8,7 +8,6 @@ class PanelController extends BackController
     {
 
         if(!isset($_SESSION['users'])) {
-            die('pass');
             header("Location: ".PANEL."login");
             exit();
         }

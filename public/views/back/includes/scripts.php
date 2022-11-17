@@ -25,3 +25,11 @@
 
 
 <script src="<?=ASSETS_BACK?>js/dashboard/dashboard-1.js"></script>
+
+<script src="<?=ASSETS_BACK?>plugins/tables/js/jquery.dataTables.min.js"></script>
+<script src="<?=ASSETS_BACK?>plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="<?=ASSETS_BACK?>plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+
+<script src="<?=ASSETS_BACK?>plugins/sweetalert/js/sweetalert.min.js"></script>
+<script src="<?=ASSETS_BACK?>plugins/sweetalert/js/sweetalert.init.js"></script>

@@ -50,7 +50,7 @@ class LoginController extends BackController
 
             }
         } else {
-            header("location:".PANEL."dashboard/index");
+            header("location:".PANEL."dashboard");
             exit();
         }
         require BACK_VIEW.'login.php';

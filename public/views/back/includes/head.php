@@ -14,5 +14,10 @@
     <!-- Chartist -->
     <link rel="stylesheet" href="<?=ASSETS_BACK?>plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="<?=ASSETS_BACK?>plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!--DATA table-->
+    <link href="<?=ASSETS_BACK?>plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!--sweetalert-->
+    <link href="<?=ASSETS_BACK?>plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
 
 </head>

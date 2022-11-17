@@ -4,7 +4,7 @@ namespace App\Controller\Back;
 
 use App\Queries\CategoryQueries;
 
-class PanelController extends BackController
+class CategoryController extends BackController
 {
     private CategoryQueries $categoryService;
 
@@ -20,6 +20,6 @@ class PanelController extends BackController
         $categories = $this->categoryService->getCategories();
 
 
-        require (BACK_VIEW.'dashboard.php');
+        require (BACK_VIEW.'category.php');
     }
 }

@@ -32,7 +32,7 @@ class CommentRepository extends Database
             return $categories;
 
         } catch(PDOException $e) {
-            throw new \Exception('Error while, fetching comments '. $e->getMessage());
+            throw new \Exception('Error while, fetching posts '. $e->getMessage());
         }
 
     }

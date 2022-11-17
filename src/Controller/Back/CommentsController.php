@@ -20,7 +20,6 @@ class CommentsController extends BackController
 
         $comments = $this->commentQueries->getComments();
 
-
         require (BACK_VIEW.'comments.php');
     }
 

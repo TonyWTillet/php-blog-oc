@@ -53,7 +53,7 @@ class LoginController extends BackController
             header("location:".PANEL."dashboard");
             exit();
         }
-        require BACK_VIEW.'login.php';
+        require BACK_VIEW.'login.twig';
     }
 
 }

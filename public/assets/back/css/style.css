@@ -7598,8 +7598,9 @@ sub {
   .nav-header {
     width: 14.375rem; } }
 .nav-header .brand-logo {
-  z-index: 999; }
+  z-index: 999;height:100%; }
 .nav-header .brand-logo a {
+  height:100%;
   padding: 1.607rem 1.8125rem;
   display: block;height: 100%;width: 100%; }
 .nav-header .brand-logo a i {

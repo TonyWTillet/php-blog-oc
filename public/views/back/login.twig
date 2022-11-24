@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html class="h-100" lang="fr">
+{% extends "base.twig" %}
 
-{{ include('includes/head.html') }}
-<body class="h-100">
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .header { display: none; }
+        .nav-header { display: none; }
+        .nk-sidebar { display: none; }
+    </style>
+{% endblock %}
 
-<!--*******************
-    Preloader start
-********************-->
-<div id="preloader">
-    <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-        </svg>
-    </div>
-</div>
-<!--*******************
-    Preloader end
-********************-->
+{% block header %}
+    <style>
+        header {
+            display: none;
+        }
+    </style>
+    {{ parent() }}
+{% endblock %}
 
+{% block content %}
 <div class="login-form-bg h-100">
     <div class="container h-100">
         <div class="row justify-content-center h-100">
@@ -26,11 +27,11 @@
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5">
                             <a class="text-center"> <h4>Accéder à l'espace d'administration</h4></a>
-                            <?php if (!empty($error)) { ?>
+                            {% if error is not empty %}
                             <div class="alert alert-danger" role="alert">
-                                <?= $error; ?>
+                                {{ error }}
                             </div>
-                            <?php } ?>
+                            {% endif %}
                             <form class="mt-5 mb-5 login-input" method="post">
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control" placeholder="Email">
@@ -40,7 +41,7 @@
                                 </div>
                                 <button class="btn login-form__btn submit w-100">Se connecter</button>
                             </form>
-                            <p class="mt-5 login-form__footer">Vous n'avez pas de compte ? <a href="<?=PANEL.'register';?>" class="text-primary">S'inscrire</a> maintenant</p>
+                            <p class="mt-5 login-form__footer">Vous n'avez pas de compte ? <a href="{{ constant('PANEL') }}register" class="text-primary">S'inscrire</a> maintenant</p>
                         </div>
                     </div>
                 </div>
@@ -48,14 +49,14 @@
         </div>
     </div>
 </div>
+    {{ parent() }}
+{% endblock %}
 
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
 
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
 
-
-<!--**********************************
-    Scripts
-***********************************-->
-{{ include('includes/scripts.html') }}
-
-</body>
-</html>

@@ -53,7 +53,10 @@ class LoginController extends BackController
             header("location:".PANEL."dashboard");
             exit();
         }
-        require BACK_VIEW.'login.twig';
+
+        require $this->Twig()->display('login.twig', [
+            'error' => $error
+        ]);
     }
 
 }

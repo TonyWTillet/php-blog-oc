@@ -3,6 +3,8 @@
 namespace App\Controller\Back;
 
 use JetBrains\PhpStorm\NoReturn;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 class BackController
 {
@@ -31,5 +33,13 @@ class BackController
         } else {
             return false;
         }
+    }
+
+    public function Twig(): Environment
+    {
+        $loader = new FilesystemLoader(BACK_VIEW);
+        return new Environment($loader, [
+            'cache' => false,
+        ]);
     }
 }

@@ -3,9 +3,10 @@
 namespace App\Controller\Back;
 
 
+use App\Controller\RequireAuhtentification;
 use App\Queries\CommentQueries;
 
-class CommentsController extends BackController
+class CommentsController extends BackController implements RequireAuhtentification
 {
     private CommentQueries $commentQueries;
 
@@ -16,7 +17,6 @@ class CommentsController extends BackController
 
     public function index()
     {
-        $this->login();
 
         $comments = $this->commentQueries->getComments();
 
@@ -28,7 +28,6 @@ class CommentsController extends BackController
 
     public function validate()
     {
-        $this->login();
 
         $comments = $this->commentQueries->getCommentsValidate();
 

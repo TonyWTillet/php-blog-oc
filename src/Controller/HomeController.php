@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Controller\Front\FrontController;
+use App\Service\AuthentificationService;
+
 
 class HomeController
 {
@@ -30,6 +32,12 @@ class HomeController
 
             $controller = 'App\Controller\\Back\\' . ucfirst($page) . 'Controller';
             $controller = new $controller();
+
+            // INTERFACE REQUIRE AUTHENTIFICATION
+            $authentificationService = new AuthentificationService();
+            if ($authentificationService->verifyAuthentification($controller)) {
+                $authentificationService->login();
+            }
             $controller->$action();
         }
 

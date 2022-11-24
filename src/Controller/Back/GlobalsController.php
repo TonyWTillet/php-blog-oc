@@ -3,9 +3,10 @@
 namespace App\Controller\Back;
 
 
+use App\Controller\RequireAuhtentification;
 use App\Queries\GlobalsQueries;
 
-class GlobalsController extends BackController
+class GlobalsController extends BackController implements RequireAuhtentification
 {
     private GlobalsQueries $globalsQueries;
 
@@ -16,13 +17,11 @@ class GlobalsController extends BackController
 
     public function index()
     {
-        $this->login();
 
         $globals  = $this->globalsQueries->getGlobals();
 
 
         echo $this->Twig()->render('globals.twig', [
-            'error' => $error,
             'globals' => $globals
         ]);
     }

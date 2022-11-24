@@ -2,9 +2,10 @@
 
 namespace App\Controller\Back;
 
+use App\Controller\RequireAuhtentification;
 use App\Queries\PostQueries;
 
-class ArticlesController extends BackController
+class ArticlesController extends BackController implements RequireAuhtentification
 {
     private PostQueries $postQueries;
 
@@ -15,7 +16,6 @@ class ArticlesController extends BackController
 
     public function index()
     {
-        $this->login();
 
         $articles = $this->postQueries->getPosts();
 

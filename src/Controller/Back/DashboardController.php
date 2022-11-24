@@ -2,9 +2,10 @@
 
 namespace App\Controller\Back;
 
+use App\Controller\RequireAuhtentification;
 use App\Queries\CategoryQueries;
 
-class DashboardController extends BackController
+class DashboardController extends BackController implements RequireAuhtentification
 {
     private CategoryQueries $categoryService;
 
@@ -15,7 +16,6 @@ class DashboardController extends BackController
 
     public function index()
     {
-        $this->login();
 
         $categories = $this->categoryService->getCategories();
 

@@ -20,6 +20,9 @@ class CategoryController extends BackController
         $categories = $this->categoryService->getCategories();
 
 
-        require (BACK_VIEW.'category.php');
+        echo $this->Twig()->render('category.twig', [
+            'error' => $error,
+            'categories' => $categories
+        ]);
     }
 }

@@ -1,0 +1,67 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Informations:</h4>
+                        <div class="basic-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" placeholder="{{  }}" name="global-email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Téléphone</label>
+                                        <input type="tel" class="form-control" placeholder="{{  }}" name="global-phone">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Github:</label>
+                                        <input type="text" class="form-control" placeholder="{{  }}" name="global-github">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Portfolio:</label>
+                                        <input type="text" class="form-control" placeholder="{{  }}" name="global-portfolio">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Iframe Google Maps:</label>
+                                    <textarea class="form-control h-150px" rows="6" id="g-maps" placeholder="{{  }}" name="global-g-maps"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Google Analytics:</label>
+                                    <textarea class="form-control h-150px" rows="6" id="g-analytics" placeholder="{{  }}" name="global-g-analytics"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

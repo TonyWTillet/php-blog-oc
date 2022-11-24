@@ -20,6 +20,9 @@ class ArticlesController extends BackController
         $articles = $this->postQueries->getPosts();
 
 
-        require (BACK_VIEW.'articles.php');
+        echo $this->Twig()->render('articles.twig', [
+            'error' => $error,
+            'articles' => $articles
+        ]);
     }
 }

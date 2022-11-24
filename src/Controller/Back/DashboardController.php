@@ -20,6 +20,8 @@ class DashboardController extends BackController
         $categories = $this->categoryService->getCategories();
 
 
-        require (BACK_VIEW.'dashboard.php');
+        require $this->Twig()->display('dashboard.twig', [
+            'error' => $error
+        ]);
     }
 }

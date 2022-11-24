@@ -20,7 +20,10 @@ class CommentsController extends BackController
 
         $comments = $this->commentQueries->getComments();
 
-        require (BACK_VIEW.'comments.php');
+        echo $this->Twig()->render('comments.twig', [
+            'error' => $error,
+            'comments' => $comments
+        ]);
     }
 
     public function validate()
@@ -30,6 +33,9 @@ class CommentsController extends BackController
         $comments = $this->commentQueries->getCommentsValidate();
 
 
-        require (BACK_VIEW.'comments_validate.php');
+        echo $this->Twig()->render('comments_validate.twig', [
+            'error' => $error,
+            'comments' => $comments
+        ]);
     }
 }

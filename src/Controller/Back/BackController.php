@@ -38,8 +38,11 @@ class BackController
     public function Twig(): Environment
     {
         $loader = new FilesystemLoader(BACK_VIEW);
-        return new Environment($loader, [
+        $twig = new Environment($loader, [
             'cache' => false,
+            'debug'=> true
         ]);
+        $twig->addExtension(new \Twig\Extension\DebugExtension());
+        return $twig;
     }
 }

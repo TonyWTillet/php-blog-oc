@@ -9,11 +9,17 @@ class ArticlesController extends BackController implements RequireAuhtentificati
 {
     private PostQueries $postQueries;
 
+    /**
+     * The constructor function is called when the class is instantiated. It is used to initialize the class
+     */
     public function __construct()
     {
         $this->postQueries = new PostQueries();
     }
 
+    /**
+     * It gets all the posts from the database and displays them on the page
+     */
     public function index()
     {
 

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+/* A Category has an id and a category_title. */
 final class Category
 {
     private int $id;

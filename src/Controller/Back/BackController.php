@@ -4,14 +4,11 @@ namespace App\Controller\Back;
 
 use JetBrains\PhpStorm\NoReturn;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
 class BackController
 {
-
-
-
-
     /**
      * It checks if the user is logged in.
      */
@@ -25,14 +22,25 @@ class BackController
         }
     }
 
-    public function Twig(): Environment
+    /**
+     * > This function creates a new Twig environment, sets the cache to false, and sets the debug to true
+     *
+     * @return Environment A new instance of the Twig Environment class.
+     */
+    public function Twig(string $template, array $array): Environment
     {
         $loader = new FilesystemLoader(BACK_VIEW);
         $twig = new Environment($loader, [
             'cache' => false,
             'debug'=> true
         ]);
-        $twig->addExtension(new \Twig\Extension\DebugExtension());
-        return $twig;
+        $twig->addExtension(new DebugExtension());
+        /*return $twig;*/
+
+        echo $twig->render($template, [
+            foreach ($array as $key => $value) {
+               $value => $value,
+            }
+        ]);
     }
 }

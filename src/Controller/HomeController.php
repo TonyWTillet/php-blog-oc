@@ -8,6 +8,9 @@ use App\Service\AuthentificationService;
 
 class HomeController
 {
+    /**
+     * The index function of the FrontController. It is the first function called when the user access the website.
+     */
     public function index() {
 
         $link = $_SERVER['REQUEST_URI'];

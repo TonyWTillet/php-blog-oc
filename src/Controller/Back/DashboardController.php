@@ -20,8 +20,6 @@ class DashboardController extends BackController implements RequireAuhtentificat
         $categories = $this->categoryService->getCategories();
 
 
-        require $this->Twig()->display('dashboard.twig', [
-            'error' => $error
-        ]);
+        require $this->Twig('dashboard');
     }
 }

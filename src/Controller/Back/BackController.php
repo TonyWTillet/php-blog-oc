@@ -27,7 +27,7 @@ class BackController
      *
      * @return Environment A new instance of the Twig Environment class.
      */
-    public function Twig(string $template, array $array): Environment
+    public function Twig(string $template, array $array = ['error' => $error]): Environment
     {
         $loader = new FilesystemLoader(BACK_VIEW);
         $twig = new Environment($loader, [
@@ -37,7 +37,7 @@ class BackController
         $twig->addExtension(new DebugExtension());
         /*return $twig;*/
 
-        echo $twig->render($template, [
+        echo $twig->render($template.'twig', [
             foreach ($array as $key => $value) {
                $value => $value,
             }

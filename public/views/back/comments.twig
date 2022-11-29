@@ -39,7 +39,7 @@
                                         <td>{{ loop.index+1 }}</td>
                                         <td>{{ com.id|e }}</td>
                                         <td>{{ com.getCommentText() }}</td>
-                                        <td>{{ com.getPostId() }}</td>
+                                        <td>{{ com.getPostTitle() }}</td>
                                         <td>{{ com.getCreated() }}</td>
                                         <td>
                                             {% if com.getFlag() is same as 1 %}

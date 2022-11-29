@@ -10,6 +10,7 @@ final class Comment
     private string $comment_text;
     private string $created_at;
     private int $flag;
+    private string $post_title;
 
     public function getId(): int
     {
@@ -39,5 +40,10 @@ final class Comment
     public function getFlag(): int
     {
         return $this->flag;
+    }
+
+    public function getPostTitle(): string
+    {
+        return $this->post_title;
     }
 }

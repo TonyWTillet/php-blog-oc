@@ -30,7 +30,7 @@
                                 <tr>
                                     <td>{{ loop.index+1 }}</td>
                                     <td>{{ cat.getCategoryTitle() }}</td>
-                                    <td>{{ cat.getArticles().count() }}</td>
+                                    <td>{{ cat.nb }}</td>
                                     <th>
                                         <a href="{{ constant('HTTP') }}category?edit={{ cat.getId() }}" class="btn mb-1 btn-primary">Modifier <span class="btn-icon-right"><i class="fa fa-edit"></i></span></a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>

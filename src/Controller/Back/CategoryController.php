@@ -16,9 +16,7 @@ class CategoryController extends BackController implements RequireAuhtentificati
 
     public function index()
     {
-
         $categories = $this->categoryService->getCategories();
-
         require $this->Twig('category', $categories, 'categories');
     }
 }

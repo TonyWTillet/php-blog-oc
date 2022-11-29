@@ -23,7 +23,7 @@ class PostRepository extends Database
     public function findAllPosts(): array
     {
         try {
-            $req = $this->getPDO()->prepare("SELECT * FROM $this->table ORDER BY created_at DESC");
+            $req = $this->getPDO()->prepare("SELECT a.*, b.id as categoriesId, b.category_title FROM $this->table a LEFT JOIN blog_categories b ON b.id = a.category_id ORDER BY a.created_at DESC");
             $req->execute(array());
             $categories=$req->fetchAll(PDO::FETCH_CLASS, Post::class);
             if (!$categories) {

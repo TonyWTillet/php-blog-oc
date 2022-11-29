@@ -37,5 +37,22 @@ class CategoryRepository extends Database
 
     }
 
+    public function getCategoryById(int $id): array
+    {
+        try {
+            $req = $this->getPDO()->prepare("SELECT * FROM $this->table WHERE id = ?");
+            $req->execute(array($id));
+            $categories=$req->fetchAll(PDO::FETCH_CLASS, Category::class);
+            if (!$categories) {
+                return [];
+            }
+            return $categories;
+
+        } catch(PDOException $e) {
+            throw new \Exception('Error while, fetching categories '. $e->getMessage());
+        }
+
+    }
+
 
 }

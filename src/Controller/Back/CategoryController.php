@@ -19,4 +19,10 @@ class CategoryController extends BackController implements RequireAuhtentificati
         $categories = $this->categoryService->getCategories();
         require $this->Twig('category', $categories, 'categories');
     }
+
+    public function edit() {
+
+        $category= $this->categoryService->getCategoryById($_GET['id']);
+        require $this->Twig('category', $category, 'categories');
+    }
 }

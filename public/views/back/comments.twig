@@ -49,7 +49,7 @@
                                             {% endif %}
                                         </td>
                                         <th>
-                                            <a href="{{ constant('HTTP') }}comments?validate={{ com.getId() }}" class="btn mb-1 btn-success">Valider <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
+                                            <a href="{{ constant('HTTP') }}panel/comments/validate?id={{ com.getId() }}" class="btn mb-1 btn-success">Valider <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
                                             <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">
@@ -61,7 +61,7 @@
                                                         </div>
                                                         <div class="modal-footer justify-content-center">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                                            <a href="{{ constant(('HTTP')) }}comments?delete={{ com.getId() }}" class="btn btn-danger">Supprimer</a>
+                                                            <a href="{{ constant(('HTTP')) }}panel/comments/delete?id={{ com.getId() }}" class="btn btn-danger">Supprimer</a>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -24,4 +24,9 @@ class CategoryQueries
     {
        return $this->categoryRepository->findAllCategories();
     }
+
+    public function getCategoryById(int $id): array
+    {
+        return $this->categoryRepository->getCategoryById($id);
+    }
 }

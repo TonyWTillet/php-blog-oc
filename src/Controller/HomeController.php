@@ -19,7 +19,7 @@ class HomeController
 
         if ($redirect == 'panel') {
             $url = explode('/', $_SERVER['REQUEST_URI']);
-
+            dump($url);
             $page = $url[2];
             $action = explode('?',$url[3])[0];
             if (empty($url[3])) {

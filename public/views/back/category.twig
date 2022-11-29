@@ -32,7 +32,7 @@
                                     <td>{{ cat.getCategoryTitle() }}</td>
                                     <td>{{ cat.nb }}</td>
                                     <th>
-                                        <a href="{{ constant('HTTP') }}category?edit={{ cat.getId() }}" class="btn mb-1 btn-primary">Modifier <span class="btn-icon-right"><i class="fa fa-edit"></i></span></a>
+                                        <a href="{{ constant('HTTP') }}panel/category/edit?id={{ cat.getId() }}" class="btn mb-1 btn-primary">Modifier <span class="btn-icon-right"><i class="fa fa-edit"></i></span></a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
                                         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
@@ -44,7 +44,7 @@
                                                     </div>
                                                     <div class="modal-footer justify-content-center">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                                        <a href="{{ constant('HTTP') }}category?delete={{ cat.getId() }}" class="btn btn-danger">Supprimer</a>
+                                                        <a href="{{ constant('HTTP') }}panel/category/delete?id={{ cat.getId() }}" class="btn btn-danger">Supprimer</a>
                                                     </div>
                                                 </div>
                                             </div>

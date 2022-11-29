@@ -21,8 +21,6 @@ class GlobalsController extends BackController implements RequireAuhtentificatio
         $globals  = $this->globalsQueries->getGlobals();
 
 
-        echo $this->Twig()->render('globals.twig', [
-            'globals' => $globals
-        ]);
+        require $this->Twig('globals', $globals, 'globals');
     }
 }

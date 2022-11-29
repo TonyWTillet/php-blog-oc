@@ -25,9 +25,9 @@ class BackController
     /**
      * > This function creates a new Twig environment, sets the cache to false, and sets the debug to true
      *
-     * @return Environment A new instance of the Twig Environment class.
+     * @return string A new instance of the Twig Environment class.
      */
-    public function Twig(string $template, array $array = ['error' => $error]): Environment
+    public function Twig(string $template,  $array, $name): string
     {
         $loader = new FilesystemLoader(BACK_VIEW);
         $twig = new Environment($loader, [
@@ -35,12 +35,9 @@ class BackController
             'debug'=> true
         ]);
         $twig->addExtension(new DebugExtension());
-        /*return $twig;*/
 
-        echo $twig->render($template.'twig', [
-            foreach ($array as $key => $value) {
-               $value => $value,
-            }
+        echo $twig->render($template.'.twig', [
+            $name => $array,
         ]);
     }
 }

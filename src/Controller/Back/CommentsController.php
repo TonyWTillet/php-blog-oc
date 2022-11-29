@@ -20,10 +20,7 @@ class CommentsController extends BackController implements RequireAuhtentificati
 
         $comments = $this->commentQueries->getComments();
 
-        echo $this->Twig()->render('comments.twig', [
-            'error' => $error,
-            'comments' => $comments
-        ]);
+        require $this->Twig('comments', $comments, 'comments');
     }
 
     public function validate()
@@ -32,9 +29,6 @@ class CommentsController extends BackController implements RequireAuhtentificati
         $comments = $this->commentQueries->getCommentsValidate();
 
 
-        echo $this->Twig()->render('comments_validate.twig', [
-            'error' => $error,
-            'comments' => $comments
-        ]);
+        require $this->Twig('comments_validate', $comments, 'comments');
     }
 }

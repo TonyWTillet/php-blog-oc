@@ -26,9 +26,6 @@ class ArticlesController extends BackController implements RequireAuhtentificati
         $articles = $this->postQueries->getPosts();
 
 
-        echo $this->Twig()->render('articles.twig', [
-            'error' => $error,
-            'articles' => $articles
-        ]);
+        require $this->Twig('articles', $articles, 'articles');
     }
 }

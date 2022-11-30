@@ -7,6 +7,13 @@ use JetBrains\PhpStorm\NoReturn;
 
 class AuthentificationService
 {
+    /**
+     * > If the controller is an instance of the RequireAuthentification interface, then return true
+     *
+     * @param controller The controller that is being called.
+     *
+     * @return bool A boolean value.
+     */
     public function verifyAuthentification($controller): bool
     {
         return $controller instanceof RequireAuhtentification;

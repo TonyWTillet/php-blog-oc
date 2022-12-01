@@ -37,4 +37,21 @@ class PostRepository extends Database
 
     }
 
+    public function findPostById(int $id): array
+    {
+        try {
+            $req = $this->getPDO()->prepare("SELECT a.*, b.id as categoriesId, b.category_title FROM $this->table a LEFT JOIN blog_categories b ON b.id = a.category_id WHERE a.id = ?");
+            $req->execute(array($id));
+            $categories=$req->fetchAll(PDO::FETCH_CLASS, Post::class);
+            if (!$categories) {
+                return [];
+            }
+            return $categories;
+
+        } catch(PDOException $e) {
+            throw new \Exception('Error while, fetching categories '. $e->getMessage());
+        }
+
+    }
+
 }

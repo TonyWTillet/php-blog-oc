@@ -50,6 +50,7 @@ class LoginController extends BackController
 
             }
         } else {
+
             header("location:".PANEL."dashboard");
             exit();
         }

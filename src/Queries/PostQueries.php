@@ -24,4 +24,9 @@ class PostQueries
     {
         return $this->postRepository->findAllPosts();
     }
+
+    public function getPostById(int $id): array
+    {
+        return $this->postRepository->findPostById($id);
+    }
 }

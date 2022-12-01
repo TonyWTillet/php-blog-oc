@@ -28,4 +28,14 @@ class ArticlesController extends BackController implements RequireAuhtentificati
 
         require $this->Twig('articles', $articles, 'articles');
     }
+
+    public function edit() {
+
+        $article= $this->postQueries->getPostById($_GET['id']);
+        require $this->Twig('edit-article', $article, 'article');
+    }
+
+    public function add() {
+        require $this->Twig('add-article', $error, 'error');
+    }
 }

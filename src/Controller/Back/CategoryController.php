@@ -14,6 +14,7 @@ class CategoryController extends BackController implements RequireAuhtentificati
     public function __construct()
     {
         $this->categoryService = new CategoryQueries();
+        $this->categoryCommands = new CategoryCommands();
     }
 
     public function index()
@@ -33,7 +34,7 @@ class CategoryController extends BackController implements RequireAuhtentificati
     }
 
     public function delete() {
-        $category= $this->categoryCommands->delete($_GET['id']);
-        require $this->Twig('add-category', $error, 'error');
+        $category = $this->categoryCommands->deleteCategory($_GET['id']);
+        require $this->Twig('category', $error, 'error');
     }
 }

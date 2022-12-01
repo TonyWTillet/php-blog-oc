@@ -6,7 +6,7 @@ use App\Middleware\Database;
 
 class Commands extends Database
 {
-    private string $table;
+    protected string $table;
 
     public function __construct(string $table)
     {
@@ -16,7 +16,7 @@ class Commands extends Database
     public function delete(int $id): bool
     {
         $query = $this->getPDO()->prepare("DELETE FROM $this->table WHERE id = ?");
-        $query->execute($id);
+        $query->execute(array($id));
         return true;
     }
 }

@@ -28,13 +28,13 @@
                                 <tbody>
                                 {% for cat in categories %}
                                 <tr>
-                                    <td>{{ loop.index+1 }}</td>
+                                    <td>{{ loop.index }}</td>
                                     <td>{{ cat.getCategoryTitle() }}</td>
                                     <td>{{ cat.nb }}</td>
                                     <th>
                                         <a href="{{ constant('HTTP') }}panel/category/edit?id={{ cat.getId() }}" class="btn mb-1 btn-primary">Modifier <span class="btn-icon-right"><i class="fa fa-edit"></i></span></a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
-                                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm{{ cat.getId() }}">Supprimer</button>
+                                        <div class="modal fade bd-example-modal-sm{{ cat.getId() }}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-header">

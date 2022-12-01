@@ -2,12 +2,14 @@
 
 namespace App\Controller\Back;
 
+use App\Commands\PostsCommands;
 use App\Controller\RequireAuhtentification;
 use App\Queries\PostQueries;
 
 class ArticlesController extends BackController implements RequireAuhtentification
 {
     private PostQueries $postQueries;
+    private PostsCommands $postCommands;
 
     /**
      * The constructor function is called when the class is instantiated. It is used to initialize the class
@@ -15,6 +17,7 @@ class ArticlesController extends BackController implements RequireAuhtentificati
     public function __construct()
     {
         $this->postQueries = new PostQueries();
+        $this->postCommands = new PostsCommands();
     }
 
     /**
@@ -37,5 +40,10 @@ class ArticlesController extends BackController implements RequireAuhtentificati
 
     public function add() {
         require $this->Twig('add-article', $error, 'error');
+    }
+
+    public function delete() {
+        $article = $this->postCommands->deletePost($_GET['id']);
+        require $this->Twig('articles', $error, 'error');
     }
 }

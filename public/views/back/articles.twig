@@ -32,7 +32,7 @@
 
                                 {% for art in articles %}
                                 <tr>
-                                    <td>{{ loop.index+1 }}</td>
+                                    <td>{{ loop.index }}</td>
                                     <td>{{ art.getUserId() }}</td>
                                     <td>{{ art.getPostTitle() }}</td>
                                     <td>{{ art.category_title }}</td>
@@ -40,8 +40,8 @@
                                     <td>{{ art.getModified() }}</td>
                                     <th>
                                         <a href="{{ constant('PANEL') }}articles/edit?id={{ art.getId() }}" class="btn mb-1 btn-primary">Modifier <span class="btn-icon-right"><i class="fa fa-edit"></i></span></a>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
-                                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm{{ art.getId() }}">Supprimer</button>
+                                        <div class="modal fade bd-example-modal-sm{{ art.getId() }}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog modal-sm">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -51,7 +51,7 @@
                                                     </div>
                                                     <div class="modal-footer justify-content-center">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                                        <a href="{{ constant('HTTP') }}articles?delete={{ art.getId() }}" class="btn btn-danger">Supprimer</a>
+                                                        <a href="{{ constant('PANEL') }}articles/delete?id={{ art.getId() }}" class="btn btn-danger">Supprimer</a>
                                                     </div>
                                                 </div>
                                             </div>

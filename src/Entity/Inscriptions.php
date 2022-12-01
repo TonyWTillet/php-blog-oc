@@ -37,7 +37,7 @@ final class Inscriptions
         return $this->email;
     }
 
-    public function getCreateAt(): string
+    public function getCreatedAt(): string
     {
         return $this->created_at;
     }

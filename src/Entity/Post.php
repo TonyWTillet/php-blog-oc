@@ -5,7 +5,7 @@ namespace App\Entity;
 final class Post
 {
     private int $id;
-    private int $category_id;
+    private int|null $category_id;
     private int $user_id;
     private string $post_title;
     private string $post_text;
@@ -19,7 +19,7 @@ final class Post
         return $this->id;
     }
 
-    public function getCategoryId(): int
+    public function getCategoryId(): int|null
     {
         return $this->category_id;
     }

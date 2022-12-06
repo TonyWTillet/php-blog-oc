@@ -7,12 +7,12 @@ final class Globals
     private string $name;
     private string $value;
 
-    public function getName(): int
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getValue(): int
+    public function getValue(): string
     {
         return $this->value;
     }

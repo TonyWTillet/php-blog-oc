@@ -2,19 +2,19 @@
 
 namespace App\Controller\Back;
 
-use App\Commands\CategoryCommands;
+use App\Commands\Delete\CategoryDeleteCommands;
 use App\Controller\RequireAuhtentification;
 use App\Queries\CategoryQueries;
 
 class CategoryController extends BackController implements RequireAuhtentification
 {
     private CategoryQueries $categoryService;
-    private CategoryCommands $categoryCommands;
+    private CategoryDeleteCommands $categoryCommands;
 
     public function __construct()
     {
         $this->categoryService = new CategoryQueries();
-        $this->categoryCommands = new CategoryCommands();
+        $this->categoryCommands = new CategoryDeleteCommands();
     }
 
     public function index()
@@ -34,7 +34,6 @@ class CategoryController extends BackController implements RequireAuhtentificati
     }
 
     public function delete() {
-        $category = $this->categoryCommands->deleteCategory($_GET['id']);
-        require $this->Twig('category', $error, 'error');
+        $this->categoryCommands->deleteCategory($_GET['id']);
     }
 }

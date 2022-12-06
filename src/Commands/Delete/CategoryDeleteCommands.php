@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Commands;
+namespace App\Commands\Delete;
 
-class CategoryCommands extends Commands
+class CategoryDeleteCommands extends DeleteCommands
 {
     public function __construct()
     {
         parent::__construct('blog_categories');
     }
 
-    public function deleteCategory(int $id): bool
+    public function deleteCategory(int $id): void
     {
         $this->delete($id);
-        return true;
     }
 
 }

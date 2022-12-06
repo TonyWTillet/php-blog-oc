@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Commands;
+namespace App\Commands\Delete;
 
-class PostsCommands extends Commands
+class PostsDeleteCommands extends DeleteCommands
 {
     public function __construct()
     {
         parent::__construct('blog_posts');
     }
 
-    public function deletePost(int $id): bool
+    public function deletePost(int $id): void
     {
         $this->delete($id);
-        return true;
     }
 
 }

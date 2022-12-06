@@ -1,0 +1,101 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Commentaires:</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Auteur</th>
+                                    <th>Commentaire</th>
+                                    <th>Article</th>
+                                    <th>Date de publication</th>
+                                    <th>Publié</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <pre>
+                              {#  {{ dump(comments) }}#}
+                                </pre>
+                                {% for com in comments %}
+                                    {#  <li>{{ user.username|e }}</li>#}
+
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td>{{ com.id|e }}</td>
+                                        <td>{{ com.getCommentText() }}</td>
+                                        <td>{{ com.getPostTitle() }}</td>
+                                        <td>{{ com.getCreated() }}</td>
+                                        <td>
+                                            {% if com.getFlag() is same as 1 %}
+                                                <span class="label label-success">Oui</span>
+                                            {% else %}
+                                                <span class="label label-danger">Non</span>
+                                            {% endif %}
+                                        </td>
+                                        <th>
+                                            <a href="{{ constant('HTTP') }}panel/comments/validate?id={{ com.getId() }}" class="btn mb-1 btn-success">Valider <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
+                                            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Etes-vous sûr de vouloir supprimer ce commentaire ?</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-footer justify-content-center">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                            <a href="{{ constant(('HTTP')) }}panel/comments/delete?id={{ com.getId() }}" class="btn btn-danger">Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Auteur</th>
+                                    <th>Commentaire</th>
+                                    <th>Article</th>
+                                    <th>Date de publication</th>
+                                    <th>Publié</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

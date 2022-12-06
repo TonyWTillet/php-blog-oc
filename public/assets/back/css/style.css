@@ -7590,24 +7590,28 @@ sub {
   background: #111B27;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
   transition: all .2s ease; }
-  .nav-header .logo-abbr {
-    display: none; }
-  .nav-header .logo-compact {
-    display: none; }
-  @media only screen and (min-width: 1200px) and (max-width: 1350px) {
-    .nav-header {
-      width: 14.375rem; } }
-  .nav-header .brand-logo {
-    z-index: 999; }
-    .nav-header .brand-logo a {
-      padding: 1.607rem 1.8125rem;
-      display: block; }
-      .nav-header .brand-logo a i {
-        font-size: 1.375rem; }
-      .nav-header .brand-logo a b img {
-        max-width: 1.5625rem; }
-      .nav-header .brand-logo a span {
-        font-size: 1.125rem; }
+.nav-header .logo-abbr {
+  display: none; }
+.nav-header .logo-compact {
+  display: none; }
+@media only screen and (min-width: 1200px) and (max-width: 1350px) {
+  .nav-header {
+    width: 14.375rem; } }
+.nav-header .brand-logo {
+  z-index: 999;height:100%; }
+.nav-header .brand-logo a {
+  height:100%;
+  padding: 1.607rem 1.8125rem;
+  display: block;height: 100%;width: 100%; }
+.nav-header .brand-logo a i {
+  font-size: 1.375rem; }
+.nav-header .brand-logo a b img {
+  max-width: 1.5625rem; }
+.nav-header .brand-logo a span {
+  font-size: 1.125rem;height: 100%;width: 100%;justify-content: center;display: flex;align-items: center; }
+.nav-header .brand-logo a span img {
+  width: 106px;
+  height: auto; }
 
 .nav-control {
   cursor: pointer;

@@ -1,0 +1,68 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ajouter un article:</h4>
+                        <div class="basic-form">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Titre:</label>
+                                        <input type="text" class="form-control" placeholder="Titre de l'article" name="article_title">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Catégorie:</label>
+                                        <input type="text" class="form-control" placeholder="Catégorie" name="article_category">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Chapo:</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" name="article_chapo"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Texte:</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" name="article_text"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-auto">
+                                        <a href="{{ constant('PANEL') }}articles/add" class="btn mb-1 btn-primary btn-md">Retour</a>
+                                    </div>
+                                    <div class="form-group col-md-auto">
+                                        <button type="submit" class="btn mb-1 btn-success btn-md">Ajouter</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

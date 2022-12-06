@@ -1,0 +1,62 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .header { display: none; }
+        .nav-header { display: none; }
+        .nk-sidebar { display: none; }
+    </style>
+{% endblock %}
+
+{% block header %}
+    <style>
+        header {
+            display: none;
+        }
+    </style>
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+<div class="login-form-bg h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <div class="card login-form mb-0">
+                        <div class="card-body pt-5">
+                            <a class="text-center"> <h4>Accéder à l'espace d'administration</h4></a>
+                            {% if error is not empty %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                            {% endif %}
+                            <form class="mt-5 mb-5 login-input" method="post">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Mot de passe">
+                                </div>
+                                <button class="btn login-form__btn submit w-100">Se connecter</button>
+                            </form>
+                            <p class="mt-5 login-form__footer">Vous n'avez pas de compte ? <a href="{{ constant('PANEL') }}register" class="text-primary">S'inscrire</a> maintenant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

@@ -3,16 +3,19 @@
 namespace App\Controller;
 
 use App\Controller\Front\FrontController;
+use App\Service\AuthentificationService;
+
 
 class HomeController
 {
+    /**
+     * The index function of the FrontController. It is the first function called when the user access the website.
+     */
     public function index() {
 
         $link = $_SERVER['REQUEST_URI'];
         $link_array = explode('/',$link);
         $redirect = $link_array[1];
-
-        echo $redirect;
 
         if ($redirect == 'panel') {
             $url = explode('/', $_SERVER['REQUEST_URI']);
@@ -32,6 +35,12 @@ class HomeController
 
             $controller = 'App\Controller\\Back\\' . ucfirst($page) . 'Controller';
             $controller = new $controller();
+
+            // INTERFACE REQUIRE AUTHENTIFICATION
+            $authentificationService = new AuthentificationService();
+            if ($authentificationService->verifyAuthentification($controller)) {
+                $authentificationService->login();
+            }
             $controller->$action();
         }
 

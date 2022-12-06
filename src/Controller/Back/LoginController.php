@@ -38,7 +38,7 @@ class LoginController extends BackController
                         $session = new Session();
                         $session->dataSession($user_data);
 
-                        header("location:".PANEL."panel/index");
+                        header("location:".PANEL."index");
                         exit();
                     } else {
 
@@ -50,10 +50,12 @@ class LoginController extends BackController
 
             }
         } else {
-            header("location:".PANEL."dashboard/index");
+
+            header("location:".PANEL."dashboard");
             exit();
         }
-        require BACK_VIEW.'login.php';
+
+        require $this->Twig('login', $error, 'error');
     }
 
 }

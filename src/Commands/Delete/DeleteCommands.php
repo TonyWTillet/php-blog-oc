@@ -2,18 +2,18 @@
 
 namespace App\Commands\Delete;
 
-use App\Commands\Validator;
+use App\Commands\RedirectParent;
 use App\Middleware\Database;
 
 class DeleteCommands extends Database
 {
     protected string $table;
-    private Validator $validator;
+    private RedirectParent $validator;
 
     public function __construct(string $table)
     {
         $this->table = $table;
-        $this->validator = new Validator();
+        $this->validator = new RedirectParent();
     }
 
     public function delete(int $id): void

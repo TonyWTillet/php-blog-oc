@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-class Validator
+class RedirectParent
 {
     /**
      * @var string[]

@@ -35,7 +35,7 @@
                                 {% for com in comments %}
                                     <tr>
                                         <td>{{ loop.index }}</td>
-                                        <td>{{ com.getUserId }}</td>
+                                        <td>{{ com.getUserName() }}</td>
                                         <td>{{ com.getCommentText() }}</td>
                                         <td>{{ com.getPostTitle() }}</td>
                                         <td>{{ com.getCreated() }}</td>

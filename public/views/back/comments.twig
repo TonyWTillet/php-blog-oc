@@ -37,7 +37,7 @@
 
                                     <tr>
                                         <td>{{ loop.index }}</td>
-                                        <td>{{ com.id|e }}</td>
+                                        <td>{{ com.getUserName() }}</td>
                                         <td>{{ com.getCommentText() }}</td>
                                         <td>{{ com.getPostTitle() }}</td>
                                         <td>{{ com.getCreated() }}</td>
@@ -49,7 +49,7 @@
                                             {% endif %}
                                         </td>
                                         <th>
-                                            <a href="{{ constant('HTTP') }}panel/comments/validate?id={{ com.getId() }}" class="btn mb-1 btn-success">Valider <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
+                                            <a href="{{ constant('HTTP') }}panel/comments/accept?id={{ com.getId() }}" class="btn mb-1 btn-success">Valider <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Supprimer</button>
                                             <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">

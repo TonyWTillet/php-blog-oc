@@ -43,7 +43,7 @@
                                         <td>{{ com.Email() }}</td>
                                         <td>{{ com.getCreatedAt() }}</td>
                                         <th>
-                                            <a href="{{ constant('HTTP') }}panel/inscriptions/validate?id={{ com.getId() }}" class="btn mb-1 btn-success">Accepter <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
+                                            <a href="{{ constant('HTTP') }}panel/inscriptions/accept?id={{ com.getId() }}" class="btn mb-1 btn-success">Accepter <span class="btn-icon-right"><i class="fa fa-check"></i></span></a>
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm{{ com.getId() }}">Supprimer</button>
                                             <div class="modal fade bd-example-modal-sm{{ com.getId() }}" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">

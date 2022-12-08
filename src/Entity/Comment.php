@@ -11,6 +11,7 @@ final class Comment
     private string $created_at;
     private int $flag;
     private string $post_title;
+    private string $user_name;
 
     public function getId(): int
     {
@@ -46,4 +47,10 @@ final class Comment
     {
         return $this->post_title;
     }
+
+    public function getUserName(): string
+    {
+        return $this->user_name;
+    }
+
 }

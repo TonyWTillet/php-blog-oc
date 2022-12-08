@@ -11,6 +11,7 @@ final class Inscriptions
     private string $user_name;
     private string $email;
     private $created_at;
+    private int $flag;
 
     public function getId(): int
     {
@@ -40,5 +41,10 @@ final class Inscriptions
     public function getCreatedAt(): string
     {
         return $this->created_at;
+    }
+
+    public function getFlag(): int
+    {
+        return $this->flag;
     }
 }

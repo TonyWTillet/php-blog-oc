@@ -23,7 +23,7 @@ class InscriptionsRepository extends Database
     public function findAllInscriptions(): array
     {
         try {
-            $req = $this->getPDO()->prepare("SELECT * FROM $this->table ORDER BY created_at DESC");
+            $req = $this->getPDO()->prepare("SELECT * FROM $this->table WHERE flag = 0 ORDER BY created_at DESC");
             $req->execute(array());
             $inscriptions=$req->fetchAll(PDO::FETCH_CLASS, Inscriptions::class);
             if (!$inscriptions) {

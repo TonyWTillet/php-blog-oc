@@ -18,4 +18,11 @@ class AddCommands extends Database
         $this->validator = new RedirectParent();
     }
 
+    public function getLastId(): int {
+        $sql = $this->getPDO()->query("SELECT id FROM $this->table ORDER BY id DESC LIMIT 1");
+        $id = $sql->fetch();
+        $lastId = $id['id'] + 1;
+        return $lastId;
+    }
+
 }

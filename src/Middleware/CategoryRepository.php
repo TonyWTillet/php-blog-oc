@@ -23,7 +23,7 @@ class CategoryRepository extends Database
     public function findAllCategories(): array
     {
         try {
-            $req = $this->getPDO()->prepare("SELECT a.*, b.id as articlesId, b.category_id, COUNT(b.category_id) AS nb FROM $this->table a LEFT JOIN blog_posts b ON b.category_id = a.id GROUP BY b.category_id");
+            $req = $this->getPDO()->prepare("SELECT a.*, b.id as articlesId, b.category_id, COUNT(b.category_id) AS nb FROM $this->table a LEFT JOIN blog_posts b ON a.id = b.category_id  GROUP BY a.id");
             $req->execute(array());
             $categories=$req->fetchAll(PDO::FETCH_CLASS, Category::class);
             if (!$categories) {

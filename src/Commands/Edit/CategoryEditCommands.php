@@ -9,13 +9,13 @@ class CategoryEditCommands extends EditCommands
         parent::__construct('blog_categories');
     }
 
-    public function save(string $categoryTitle, int $id): void
+    public function save(string|null $categoryTitle, int $id): void
     {
-       if (!$this->verifications->postVerifications()) {
+       if (!$this->verifications->postVerifications() || empty($categoryTitle)) {
            return;
        }
-    $sql = "UPDATE $this->table SET category_title=? WHERE id=?";
-    $req = $this->getPDO()->prepare($sql);
-    $req->execute(array($categoryTitle, $id));
+        $sql = "UPDATE $this->table SET category_title=? WHERE id=?";
+        $req = $this->getPDO()->prepare($sql);
+        $req->execute(array($categoryTitle, $id));
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Back;
 
+use App\Commands\Add\AddPostsCommands;
 use App\Commands\Delete\PostsDeleteCommands;
 use App\Commands\Edit\PostsEditCommands;
 use App\Controller\RequireAuhtentification;
@@ -13,6 +14,8 @@ class ArticlesController extends BackController implements RequireAuhtentificati
     private PostQueries $postQueries;
     private PostsDeleteCommands $postCommands;
     private PostsEditCommands $postsEditCommands;
+
+    private AddPostsCommands $addPostsCommands;
     private CategoryQueries $categoryQueries;
 
     /**
@@ -23,6 +26,7 @@ class ArticlesController extends BackController implements RequireAuhtentificati
         $this->postQueries = new PostQueries();
         $this->postCommands = new PostsDeleteCommands();
         $this->postsEditCommands = new PostsEditCommands();
+        $this->addPostsCommands = new AddPostsCommands();
         $this->categoryQueries = new CategoryQueries();
     }
 
@@ -46,6 +50,7 @@ class ArticlesController extends BackController implements RequireAuhtentificati
 
     public function add() {
         $categories = $this->categoryQueries->getCategories();
+        $this->addPostsCommands->add($_POST, $_SESSION['user']['id']);
         require $this->Twig('add-article', $categories, 'categories');
     }
 

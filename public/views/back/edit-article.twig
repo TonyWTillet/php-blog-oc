@@ -17,15 +17,15 @@
                     <div class="card-body">
                         <h4 class="card-title">Modifier l'article: {{ article[0].getPostTitle() }} </h4>
                         <div class="basic-form">
-                            <form>
+                            <form method="post">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Titre:</label>
-                                        <input type="text" class="form-control" placeholder=" {{ article[0].getPostTitle() }}" name="article_title">
+                                        <input type="text" class="form-control" placeholder=" {{ article[0].getPostTitle() }}" name="article_title" value="{{ article[0].getPostTitle() }}">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Catégorie:</label>
-                                        <input type="text" class="form-control" placeholder=" {{ article[0].category_title }}" name="article_category">
+                                        <input type="text" class="form-control" placeholder=" {{ article[0].category_title }}" disabled name="article_category" value="{{ article[0].category_title }}">
                                     </div>
                                 </div>
                                 <div class="form-row">

@@ -10,8 +10,8 @@ final class Post
     private string $post_title;
     private string $post_text;
     private string $post_chapo;
-    private $created_at;
-    private $modified_at;
+    private string $created_at;
+    private string|null $modified_at;
     private string $nav_url;
 
     public function getId(): int
@@ -49,7 +49,7 @@ final class Post
         return $this->created_at;
     }
 
-    public function getModified(): string
+    public function getModified(): string|null
     {
         return $this->modified_at;
     }

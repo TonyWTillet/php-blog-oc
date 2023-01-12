@@ -46,6 +46,7 @@ class PostRepository extends Database
             if (!$categories) {
                 return [];
             }
+            dump($categories);
             return $categories;
 
         } catch(PDOException $e) {

@@ -22,7 +22,6 @@ class FrontController
             'debug'=> true
         ]);
         $twig->addExtension(new DebugExtension());
-
         echo $twig->render($template.'.twig', [
             $name => $array,
         ]);

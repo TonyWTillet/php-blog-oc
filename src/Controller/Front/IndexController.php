@@ -23,6 +23,8 @@ class IndexController extends FrontController
     public function index()
     {
         $categories = $this->categoryQueries->getCategories();
-        require $this->Twig('home', $categories, 'categories');
+        $data['categories'] = $categories;
+        $data['globals'] = $globals;
+        require $this->Twig('home', $data, 'data');
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Controller\Front\FrontController;
 use App\Service\AuthentificationService;
 
 
@@ -41,6 +40,24 @@ class HomeController
             if ($authentificationService->verifyAuthentification($controller)) {
                 $authentificationService->login();
             }
+            $controller->$action();
+        }
+
+        else {
+            $url = explode('/', $_SERVER['REQUEST_URI']);
+
+            $page = $url[1];
+            $action = explode('?',$url[2])[0];
+            if (empty($url[1])) {
+                $page = 'index';
+            }
+            if (empty($url[2])) {
+                $action = 'index';
+            }
+
+            $controller = 'App\Controller\\Front\\' . ucfirst($page) . 'Controller';
+            $controller = new $controller();
+
             $controller->$action();
         }
 

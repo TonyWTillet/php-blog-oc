@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en-us"><head>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>Reader | Personal Bulma Blog Template</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="This is meta description">
+    <meta name="author" content="Themefisher">
+    <meta name="generator" content="Hugo 0.74.3" />
+
+    <!-- plugins -->
+
+    <link rel="stylesheet" href="{{ constant('ASSETS_FRONT') }}plugins/bulma/bulma.min.css">
+    <link rel="stylesheet" href="{{ constant('ASSETS_FRONT') }}plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="{{ constant('ASSETS_FRONT') }}plugins/slick/slick.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ constant('ASSETS_FRONT') }}css/style.css" media="screen">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{{ constant('ASSETS_FRONT') }}images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{ constant('ASSETS_FRONT') }}images/favicon.png" type="image/x-icon">
+
+    <meta property="og:title" content="Reader | Personal Bulma Blog Template" />
+    <meta property="og:description" content="This is meta description" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:updated_time" content="2020-03-15T15:40:24+06:00" />
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+<!-- navigation -->
+<nav class="navigation navbar is-fixed-top is-align-items-center is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img class="img-fluid" width="100px" src="{{ constant('ASSETS_BACK') }}images/logo.png" alt="Reader | Personal Bulma Blog Template">
+            </a>
+
+            <a role="button" class="navbar-burger burger mt-2" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start mx-auto">
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}">Accueil</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}categories">Catégories</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}contact">Contact</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}panel">Connexion</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}inscription">Inscription</a>
+                </li>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<!-- /navigation -->
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+    <svg class="footer-border" height="214" viewBox="0 0 2204 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2203 213C2136.58 157.994 1942.77 -33.1996 1633.1 53.0486C1414.13 114.038 1200.92 188.208 967.765 118.127C820.12 73.7483 263.977 -143.754 0.999958 158.899"
+              stroke-width="2" />
+    </svg>
+
+
+    <div class="container">
+        <div class="columns is-multiline is-align-items-center">
+            <div class="column is-5-desktop has-text-centered has-text-left-desktop mb-4">
+                <ul class="footer-list mb-0">
+                    <li class="list-inline-item"><a href="{{ constant('HTTP') }}politique">Politique de confidentialité</a></li>
+                    <li class="list-inline-item"><a href="{{ constant('HTTP') }}mentions">Mentions légales</a></li>
+                </ul>
+            </div>
+            <div class="column is-2-desktop has-text-centered mb-4">
+                <a href="{{ constant('HTTP') }}"><img class="img-fluid" width="100px" src="{{ constant('ASSETS_FRONT') }}images/logo.png" alt="Tony Tillet | Le Petit Cactus"></a>
+            </div>
+            <div class="column is-5-desktop has-text-right-desktop has-text-centered mb-4">
+                <ul class="footer-list mb-0">
+
+                    <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+
+                    <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+
+                    <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
+
+                    <li class="list-inline-item"><a href="#"><i class="ti-github"></i></a></li>
+
+                    <li class="list-inline-item"><a href="#"><i class="ti-youtube"></i></a></li>
+
+                </ul>
+            </div>
+            <div class="column is-12">
+                <div class="border-bottom border-default"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+{% block scripts %}
+<!-- JS Plugins -->
+<script src="{{ constant('ASSETS_FRONT') }}}plugins/jQuery/jquery.min.js"></script>
+
+<script src="{{ constant('ASSETS_FRONT') }}plugins/slick/slick.min.js"></script>
+
+<script src="{{ constant('ASSETS_FRONT') }}plugins/instafeed/instafeed.min.js"></script>
+
+
+<!-- Main Script -->
+<script src="{{ constant('ASSETS_FRONT') }}js/script.js"></script></body>
+{% endblock %}
+</html>

@@ -25,7 +25,7 @@ class Database
         $pdo = new PDO("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'].";charset=utf8",  $_ENV['DB_USER'],$_ENV['DB_PASSWORD']);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo = $pdo;
-        return$this->pdo;
+        return $this->pdo;
     }
 
     /**

@@ -160,7 +160,7 @@
             <ul class="widget-list-inline widget-card">
                 {% for cat in data['categories'] %}
 
-                    <li class="list-inline-item"><a href="{{ constant('HTTP')}}categories/{{ cat.getCategoryTitle() }}">{{ cat.getCategoryTitle() }}</a></li>
+                    <li class="list-inline-item"><a href="{{ constant('HTTP')}}categories/post?cat={{ cat.getId() }}">{{ cat.getCategoryTitle() }}</a></li>
 
                 {% endfor %}
             </ul>

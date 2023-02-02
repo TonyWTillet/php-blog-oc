@@ -47,7 +47,9 @@ class HomeController
             $url = explode('/', $_SERVER['REQUEST_URI']);
 
             $page = $url[1];
-            $action = explode('?',$url[2])[0];
+            if (!empty($url[2])) {
+                $action = explode('?',$url[2])[0];
+            }
             if (empty($url[1])) {
                 $page = 'index';
             }

@@ -22,7 +22,16 @@ class Database
     protected function getPDO(): PDO
     {
 
-        $pdo = new PDO("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'].";charset=utf8",  $_ENV['DB_USER'],$_ENV['DB_PASSWORD']);
+        // $pdo = new PDO("mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_NAME'].";charset=utf8",  $_ENV['DB_USER'],$_ENV['DB_PASSWORD']);
+	    $pdo = new PDO(
+		    sprintf('mysql:host=%s;dbname=%s;port=%s;charset=utf8',
+			    $_ENV['DB_HOST'],
+			    $_ENV['DB_NAME'],
+			    $_ENV['DB_PORT'],
+		    ),
+		    $_ENV['DB_USER'],
+		    $_ENV['DB_PASSWORD']
+	    );
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo = $pdo;
         return $this->pdo;

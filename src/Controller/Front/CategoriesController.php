@@ -7,9 +7,8 @@ use App\Queries\GlobalsQueries;
 use App\Queries\PostQueries;
 use App\Queries\UserQueries;
 use App\Trait\DateFormat;
-use Exception;
 
-class IndexController extends FrontController
+class CategoriesController extends FrontController
 {
     private GlobalsQueries $globalsQueries;
     private CategoryQueries $categoryQueries;
@@ -33,12 +32,26 @@ class IndexController extends FrontController
     {
         $categories = $this->categoryQueries->getCategories();
         $globals = $this->globalsQueries->getGlobals();
-        $posts = $this->postQueries->getRecentPost();
+        $posts = $this->postQueries->getPosts();
         $users = $this->userQueries->getActiveUsers();
         $data['categories'] = $categories;
         $data['globals'] = $globals;
         $data['posts'] = $posts;
         $data['users'] = $users;
-        require $this->Twig('home', $data, 'data');
+        require $this->Twig('category', $data, 'data');
+    }
+
+    public function post()
+    {
+        $category = $_GET['cat'];
+        $categories = $this->categoryQueries->getCategoryById($category);
+        $globals = $this->globalsQueries->getGlobals();
+        $posts = $this->postQueries->getPostByCategoryId($category);
+        $users = $this->userQueries->getActiveUsers();
+        $data['categories'] = $categories;
+        $data['globals'] = $globals;
+        $data['posts'] = $posts;
+        $data['users'] = $users;
+        require $this->Twig('category-detail', $data, 'data');
     }
 }

@@ -51,6 +51,9 @@ class HomeController
             if (empty($url[1])) {
                 $page = 'index';
             }
+            if ($url[1] == 'article') {
+                $action = 'index';
+            }
             if (empty($url[2])) {
                 $action = 'index';
             }

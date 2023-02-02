@@ -3,27 +3,25 @@
 namespace App\Controller\Front;
 
 use App\Queries\CategoryQueries;
+use App\Queries\CommentQueries;
 use App\Queries\GlobalsQueries;
 use App\Queries\PostQueries;
 use App\Queries\UserQueries;
 use App\Trait\DateFormat;
-use Exception;
 
-class IndexController extends FrontController
+class ArticleController extends FrontController
 {
     private GlobalsQueries $globalsQueries;
-    private CategoryQueries $categoryQueries;
     private PostQueries $postQueries;
-    private UserQueries $userQueries;
     private DateFormat $dateFormat;
+    private CommentQueries $commentQueries;
 
     public function __construct()
     {
         $this->globalsQueries = new GlobalsQueries();
-        $this->categoryQueries = new CategoryQueries();
         $this->postQueries = new PostQueries();
-        $this->userQueries = new UserQueries();
         $this->dateFormat = new DateFormat();
+        $this->commentQueries = new CommentQueries();
     }
 
     /**
@@ -31,14 +29,14 @@ class IndexController extends FrontController
      */
     public function index()
     {
-        $categories = $this->categoryQueries->getCategories();
+        $url = explode('/', $_SERVER['REQUEST_URI']);
+        $postId = $url[2];
         $globals = $this->globalsQueries->getGlobals();
-        $posts = $this->postQueries->getRecentPost();
-        $users = $this->userQueries->getActiveUsers();
-        $data['categories'] = $categories;
+        $posts = $this->postQueries->getPostById($postId);
+        $comments = $this->commentQueries->getCommentsByPostId($postId);
         $data['globals'] = $globals;
         $data['posts'] = $posts;
-        $data['users'] = $users;
-        require $this->Twig('home', $data, 'data');
+        require $this->Twig('post', $data, 'data');
     }
+
 }

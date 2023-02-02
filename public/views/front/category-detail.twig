@@ -1,0 +1,121 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="py-4"></div>
+    <section class="section">
+        <div class="py-4"></div>
+        <div class="container">
+            <div class="columns is-multiline is-desktop">
+                <div class="column is-8-desktop">
+                    <h1 class="h2 mb-5">Showing items from <mark>{{ data['categories'][0].getCategoryTitle() }}</mark></h1>
+                    {% for post in data['posts'] %}
+                            <article class="card mb-5">
+                                {% if post.getImage is not empty %}
+                                    <div class="post-slider">
+                                        <img src="{{ constant('ASSETS_FRONT') }}images/post/post-3.jpg" class="card-img-top" alt="post-thumb">
+                                    </div>
+                                {% endif %}
+                                <div class="card-body">
+                                    <h3 class="mb-3"><a class="post-title" href="post-details.html">{{ post.getPostTitle }}</a></h3>
+                                    <ul class="card-meta list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="author-single.html" class="card-meta-author">
+                                                <img src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
+                                                <span>{{ post.first_name }} {{ post.last_name }}</span>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <i class="ti-calendar"></i>{{ post.getModified }}
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <ul class="card-meta-tag list-inline">
+                                                <li class="list-inline-item"><a href="{{ constant('HTTP') }}categories/post?cat={{ post.categoryId }}">{{ post.category_title }}</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p>{{ post.getPostChapo }}</p>
+                                    <a href="article/{{ post.getNavUrl }}" class="btn btn-outline-primary">En voir plus</a>
+                                </div>
+                            </article>
+                    {% endfor %}
+                </div>
+
+                <aside class="column is-4-desktop @@sidebar">
+
+                    <!-- about me -->
+                    <div class="widget widget-about">
+                        <h4 class="widget-title">Tony, enchanté!</h4>
+                        <img class="img-fluid" src="{{ constant('ASSETS_FRONT') }}images/author.jpg" alt="Tony Tillet">
+                        <p>Développeur passioné, à la recherche de défis.</p>
+                        <ul class="social-icons mb-3">
+
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/tonytilletdevweb/?originalSubdomain=fr"><i class="ti-linkedin"></i></a></li>
+
+                            <li class="list-inline-item"><a href="https://github.com/TonyWTillet"><i class="ti-github"></i></a></li>
+
+
+                        </ul>
+                        <a href="{{ constant('HTTP') }}contact" class="btn btn-primary mb-2">Me contacter</a>
+                    </div>
+
+                    <!-- Promotion -->
+                    <div class="promotion">
+                        <img src="{{ constant('ASSETS_FRONT') }}images/dev.jpg" class="img-fluid w-100">
+                        <div class="promotion-content">
+                            <h5 class="has-text-white mb-3">Partager votre passion!!</h5>
+                            <p class="has-text-white mb-4">Inscrivez-vous et faites nous découvrir vos intérêts.</p>
+                            <a href="{{ constant('HTTP') }}inscription" class="btn btn-primary">S'inscrire</a>
+                        </div>
+                    </div>
+
+                    <!-- authors -->
+                    <div class="widget widget-author">
+                        <h4 class="widget-title">Auteurs</h4>
+                        {% for user in data['users'] %}
+                            <div class="media align-items-center">
+                                <div class="mr-3">
+                                    <img class="widget-author-image" src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-1"><a class="post-title" href="author-single.html">{{ user.getFirstName() }} {{ user.getLastName() }}</a></h5>
+                                    <span>Membre depuis : {{ user.getCreatedAt() }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Search -->
+
+
+                    <!-- Social -->
+                    <div class="widget">
+                        <h4 class="widget-title"><span>Me retrouver :</span></h4>
+                        <ul class="widget-social">
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/tonytilletdevweb/?originalSubdomain=fr"><i class="ti-linkedin"></i></a></li>
+
+                            <li class="list-inline-item"><a href="https://github.com/TonyWTillet"><i class="ti-github"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

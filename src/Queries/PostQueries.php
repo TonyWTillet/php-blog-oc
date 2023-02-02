@@ -24,10 +24,21 @@ class PostQueries
     {
         return $this->postRepository->findAllPosts();
     }
-
+    public function getRecentPost(): array
+    {
+        return $this->postRepository->findRecentPosts();
+    }
     public function getPostById(int $id): array
     {
         return $this->postRepository->findPostById($id);
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function getPostByCategoryId(int $catId): array
+    {
+        return $this->postRepository->findAllPostsByCategoryId($catId);
     }
 
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 27 jan. 2023 à 17:24
+-- Généré le : jeu. 02 fév. 2023 à 13:16
 -- Version du serveur : 5.7.33
 -- Version de PHP : 8.1.2
 
@@ -332,8 +332,8 @@ INSERT INTO `blog_users` (`id`, `user_name`, `first_name`, `last_name`, `email`,
 (1, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
 (2, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
 (3, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
-(4, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
-(5, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
+(4, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
+(5, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
 (6, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
 (7, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
 (8, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),

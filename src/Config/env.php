@@ -24,6 +24,7 @@ define('EXPORT', ABSPATH . '../uploads/exports/');
 define('VIEW_ASSETS', ABSPATH . '/assets/');
 define('BACK_VIEW', ABSPATH .'views/back/');
 define('FRONT_VIEW', ABSPATH .'views/front/');
+define('VIEWS_FR', ABSPATH .'views/back/');
 define('ASSETS_FRONT', HTTP .'assets/front/');
 define('ASSETS_BACK', HTTP . 'assets/back/');
 define('VIEW', ABSPATH .'/views/');

@@ -38,7 +38,7 @@ class LoginController extends BackController
                         $session = new Session();
                         $session->dataSession($user_data);
 
-                        header("location:".PANEL."index");
+                        header("location:".PANEL."dashboard");
                         exit();
                     } else {
 

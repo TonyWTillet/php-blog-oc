@@ -20,19 +20,26 @@
                         <h1 class="h2">{{ data['posts'][0].getPostTitle }}</h1>
                         <ul class="card-meta my-3 list-inline">
                             <li class="list-inline-item">
-                                <a href="author-single.html" class="card-meta-author">
+                                <a class="card-meta-author">
                                     <img src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
                                     <span>{{ data['posts'][0].first_name }} {{ data['posts'][0].last_name }}</span>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <i class="ti-calendar"></i>{{ data['posts'][0].getCreated }}
+                                <i class="ti-calendar"></i>
+                                {% if data['posts'][0].getModified is not empty %}
+                                {{ data['posts'][0].getModified }}
+                                {% else %}
+                                {{ data['posts'][0].getCreated }}
+                                {% endif %}
                             </li>
+                            {% if data['posts'][0].getCategoryId is not empty %}
                             <li class="list-inline-item">
                                 <ul class="card-meta-tag list-inline">
-                                    <li class="list-inline-item"><a href="tags.html">{{ data['posts'][0].category_title }}</a></li>
+                                    <li class="list-inline-item"><a href="{{ constant('HTTP') }}categories/post?cat={{ data['posts'][0].getCategoryId }}">{{ data['posts'][0].category_title }}</a></li>
                                 </ul>
                             </li>
+                            {% endif %}
                         </ul>
                         <div class="content">
                             {{ data['posts'][0].getPostChapo }}
@@ -48,23 +55,21 @@
                     <div class="mb-5 border-top mt-4 pt-5">
                         <h3 class="mb-5">Commentaires</h3>
 
+                        {% if data['comments'] is not empty %}
+                        {% for comment in data['comments'] %}
                         <div class="block mb-4 pb-4">
                             <a class="is-block mb-5" href="#"><img src="{{ constant('ASSETS_FRONT') }}images/post/user-01.jpg" class="mr-3 rounded-circle" alt=""></a>
 
-                            <a href="#!" class="h4 d-inline-block mb-3">Alexender Grahambel</a>
-                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                            <span class="text-black-800 mr-3 font-weight-600">April 18, 2020 at 6.25 pm</span>
-                            <a class="text-primary font-weight-600" href="#!">Reply</a>
+                            <a href="#!" class="h4 d-inline-block mb-3">{{ comment.getUserName }}</a>
+                            <p>{{ comment.getCommentText }}</p>
+                            <span class="text-black-800 mr-3 font-weight-600">{{ comment.getCreated }}</span>
+                            <a class="text-primary font-weight-600" href="/repondre">Répondre</a>
                         </div>
+                        {% endfor %}
+                        {% else %}
+                        <p>Il n'y a aucun commentaire pour cet article.</p>
+                        {% endif %}
 
-                        <div class="block">
-                            <a class="is-block mb-5" href="#!"><img src="{{ constant('ASSETS_FRONT') }}images/post/user-02.jpg" class="mr-3 rounded-circle" alt=""></a>
-
-                            <a href="#!" class="h4 d-inline-block mb-3">Nadia Sultana Tisa</a>
-                            <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                            <span class="text-black-800 mr-3 font-weight-600">April 18, 2020 at 6.25 pm</span>
-                            <a class="text-primary font-weight-600" href="#!">Reply</a>
-                        </div>
                     </div>
 
                     <div class="pt-5">

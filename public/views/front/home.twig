@@ -86,7 +86,7 @@
                     </div>
                     {% endif %}
                     <div class="card-body">
-                        <h3 class="mb-3"><a class="post-title" href="post-details.html">{{ post.getPostTitle }}</a></h3>
+                        <h3 class="mb-3"><a class="post-title" href="article/{{ post.getNavUrl }}">{{ post.getPostTitle }}</a></h3>
                         <ul class="card-meta list-inline">
                             <li class="list-inline-item">
                                 <a href="author-single.html" class="card-meta-author">
@@ -104,7 +104,7 @@
                             </li>
                         </ul>
                         <p>{{ post.getPostChapo }}</p>
-                        <a href="article/{{ post.getNavUrl }}" class="btn btn-outline-primary">En voir plus</a>
+                        <a href="{{ constant('HTTP') }}article/{{ post.getNavUrl }}" class="btn btn-outline-primary">En voir plus</a>
                     </div>
                 </article>
                 {% endfor %}
@@ -147,7 +147,7 @@
                     <img class="widget-author-image" src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
                 </div>
                 <div class="media-body">
-                    <h5 class="mb-1"><a class="post-title" href="author-single.html">{{ user.getFirstName() }} {{ user.getLastName() }}</a></h5>
+                    <h5 class="mb-1"><a class="post-title" >{{ user.getFirstName() }} {{ user.getLastName() }}</a></h5>
                     <span>Membre depuis : {{ user.getCreatedAt() }}</span>
                 </div>
             </div>

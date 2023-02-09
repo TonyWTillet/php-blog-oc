@@ -15,7 +15,7 @@
         <div class="container">
             <div class="columns is-multiline is-desktop">
                 <div class="column is-8-desktop">
-                    <h1 class="h2 mb-5">Showing items from <mark>{{ data['categories'][0].getCategoryTitle() }}</mark></h1>
+                    <h1 class="h2 mb-5">Articles de la catégorie <mark>{{ data['categories'][0].getCategoryTitle() }}</mark></h1>
                     {% for post in data['posts'] %}
                             <article class="card mb-5">
                                 {% if post.getImage is not empty %}
@@ -24,7 +24,7 @@
                                     </div>
                                 {% endif %}
                                 <div class="card-body">
-                                    <h3 class="mb-3"><a class="post-title" href="post-details.html">{{ post.getPostTitle }}</a></h3>
+                                    <h3 class="mb-3"><a class="post-title" href="{{ constant('HTTP') }}article/{{ post.getNavUrl }}">{{ post.getPostTitle }}</a></h3>
                                     <ul class="card-meta list-inline">
                                         <li class="list-inline-item">
                                             <a href="author-single.html" class="card-meta-author">
@@ -35,14 +35,16 @@
                                         <li class="list-inline-item">
                                             <i class="ti-calendar"></i>{{ post.getModified }}
                                         </li>
+                                        {% if post.category_title is not empty %}
                                         <li class="list-inline-item">
                                             <ul class="card-meta-tag list-inline">
                                                 <li class="list-inline-item"><a href="{{ constant('HTTP') }}categories/post?cat={{ post.categoryId }}">{{ post.category_title }}</a></li>
                                             </ul>
                                         </li>
+                                        {% endif %}
                                     </ul>
                                     <p>{{ post.getPostChapo }}</p>
-                                    <a href="article/{{ post.getNavUrl }}" class="btn btn-outline-primary">En voir plus</a>
+                                    <a href="{{ constant('HTTP') }}article/{{ post.getNavUrl }}" class="btn btn-outline-primary">En voir plus</a>
                                 </div>
                             </article>
                     {% endfor %}

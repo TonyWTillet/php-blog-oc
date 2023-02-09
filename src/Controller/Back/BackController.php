@@ -2,6 +2,7 @@
 
 namespace App\Controller\Back;
 
+use App\Entity\Comment;
 use JetBrains\PhpStorm\NoReturn;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
@@ -40,4 +41,20 @@ class BackController
             $name => $array,
         ]);
     }
+
+    public function Counter() {
+        try {
+            $req = $this->getPDO()->prepare("SELECT COUNT(*) FROM $this->table");
+            $req->execute(array());
+            $counter=$req->fetchAll();
+            if (!$counter) {
+                return [];
+            }
+            return $counter;
+
+        } catch(PDOException $e) {
+            throw new \Exception('Error while, counting  '. $e->getMessage());
+        }
+    }
+
 }

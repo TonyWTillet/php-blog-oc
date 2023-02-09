@@ -30,12 +30,18 @@ class ArticleController extends FrontController
     public function index()
     {
         $url = explode('/', $_SERVER['REQUEST_URI']);
-        $postId = $url[2];
+        if (strpos($url[2], "-") !== false) {
+            $occurence = substr($url[2], 0, strpos($url[2],"-"));
+            $postId = $occurence;
+        } else {
+            $postId = $url[2];
+        }
         $globals = $this->globalsQueries->getGlobals();
         $posts = $this->postQueries->getPostById($postId);
         $comments = $this->commentQueries->getCommentsByPostId($postId);
         $data['globals'] = $globals;
         $data['posts'] = $posts;
+        $data['comments'] = $comments;
         require $this->Twig('post', $data, 'data');
     }
 

@@ -51,7 +51,6 @@ class CategoryRepository extends Database
         } catch(PDOException $e) {
             throw new \Exception('Error while, fetching categories '. $e->getMessage());
         }
-
     }
 
 

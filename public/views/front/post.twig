@@ -71,27 +71,25 @@
                         {% endif %}
 
                     </div>
-
+                    {% if data.session.flag == 1  %}
+                    {% if data.message is defined  %}
+                        <div class="alert alert-success" role="alert">
+                        {{ data.message }}
+                        </div>
+                    {% endif %}
                     <div class="pt-5">
                         <h3 class="mb-5">Laisser un commentaire</h3>
                         <form method="POST">
                             <div class="columns is-multiline">
                                 <div class="input-group py-0 column is-12">
-                                    <textarea class="input" name="comment" columnss="7" required></textarea>
-                                </div>
-                                <div class="input-group py-0 column is-4-desktop">
-                                    <input class="input" type="text" placeholder="Name" required>
-                                </div>
-                                <div class="input-group py-0 column is-4-desktop">
-                                    <input class="input" type="email" placeholder="Email" required>
-                                </div>
-                                <div class="input-group py-0 column is-4-desktop">
-                                    <input class="input" type="url" placeholder="Website">
+                                    <textarea class="input" name="comment_text" columnss="7" placeholder="Je trouve l'article..." required></textarea>
+                                    <input hidden="hidden" name="post_id" value="{{ data['posts'][0].getId }}">
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Comment Now</button>
+                            <button class="btn btn-primary" type="submit">Commenter</button>
                         </form>
                     </div>
+                    {% endif %}
                 </div>
 
             </div>

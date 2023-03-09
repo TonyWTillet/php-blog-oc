@@ -14,11 +14,11 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-9-widescreen mx-auto">
-                    <h1 class="mb-4">Nous contacter</h1>
+                    <h1 class="mb-4">S'inscrire</h1>
                     <ul class="list-inline">
                         <li class="list-inline-item"><a class="text-default" href="{{ constant('HTTP') }}">Accueil
                                 &nbsp; &nbsp; /</a></li>
-                        <li class="list-inline-item text-primary">Contact</li>
+                        <li class="list-inline-item text-primary">Inscription</li>
                     </ul>
                 </div>
             </div>
@@ -78,8 +78,7 @@
                 <div class="column is-8-widescreen mx-auto">
 
                     <div class="content mb-5">
-                        <h2 id="we-would-love-to-hear-from-you">Donner nous votre avis...</h2>
-                        <p>Un besoin, un problème ou une idée ?</p>
+                        <h2 id="we-would-love-to-hear-from-you">Partager votre passion...</h2>
                     </div>
                     {% if data.message is not empty and data.message.error == false  %}
                         <div class="notification is-success">
@@ -93,20 +92,24 @@
                         {% endif %}
                         <form method="POST">
                             <div class="input-group">
-                                <label for="name">Nom / Prénom (Requis)</label>
-                                <input type="text" name="name" id="name" class="input" placeholder="John Doe" required>
+                                <label for="user_name">Pseudo (Requis)</label>
+                                <input type="text" name="user_name" id="user_name" class="input" placeholder="JohnDoe83" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="first_name">Nom (Requis)</label>
+                                <input type="text" name="first_name" id="first_name" class="input" placeholder="Doe" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="last_name">Prénom (Requis)</label>
+                                <input type="text" name="last_name" id="last_name" class="input" placeholder="John" required>
                             </div>
                             <div class="input-group">
                                 <label for="email">Email (Requis)</label>
                                 <input type="email" name="email" id="email" class="input" placeholder="johndoe@gmail.com" required>
                             </div>
                             <div class="input-group">
-                                <label for="phone">Téléphone (Requis)</label>
-                                <input type="tel" name="phone" id="phone" class="input" placeholder="johndoe@gmail.com" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="message">Message (Requis)</label>
-                                <textarea name="message" id="message" class="input" placeholder="Bonjour, je vous contacte à propos de..." required></textarea>
+                                <label for="password">Mot de passe (Requis)</label>
+                                <input type="password" name="password" id="password" class="input" placeholder="johndoe@gmail.com" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>

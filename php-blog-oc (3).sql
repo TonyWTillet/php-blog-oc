@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 02 fév. 2023 à 13:16
+-- Généré le : ven. 10 mars 2023 à 17:13
 -- Version du serveur : 5.7.33
 -- Version de PHP : 8.1.2
 
@@ -70,7 +70,7 @@ CREATE TABLE `blog_comments` (
 
 INSERT INTO `blog_comments` (`id`, `post_id`, `user_id`, `comment_text`, `created_at`, `flag`) VALUES
 (2, 9, 4, 'eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet libero. Integer in magna. Phasellus', '25/11/2021', 1),
-(3, 8, 5, 'consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis', '29/11/2021', 0),
+(3, 8, 5, 'consequat dolor vitae dolor. Donec fringilla. Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id, mollis', '29/11/2021', 1),
 (4, 8, 5, 'ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis, pede. Suspendisse dui. Fusce diam nunc, ullamcorper eu, euismod ac, fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin', '18/11/2021', 1),
 (7, 8, 7, 'mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod', '23/11/2021', 1),
 (8, 7, 7, 'montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem', '25/11/2021', 1),
@@ -142,7 +142,41 @@ INSERT INTO `blog_comments` (`id`, `post_id`, `user_id`, `comment_text`, `create
 (95, 9, 2, 'magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et risus. Quisque libero lacus, varius', '29/11/2021', 0),
 (97, 6, 1, 'lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu', '26/11/2021', 0),
 (98, 7, 2, 'vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus vitae mauris', '27/11/2021', 0),
-(100, 2, 6, 'Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus', '17/11/2021', 0);
+(100, 2, 6, 'Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a purus. Duis elementum, dui quis accumsan convallis, ante lectus', '17/11/2021', 0),
+(101, 31, 1, 'Voici un commentaire', '09/03/2023', 1),
+(102, 31, 1, 'Voici un commentaire', '09/03/2023', 0),
+(103, 31, 1, 'Voici un commentaire', '09/03/2023', 0),
+(104, 31, 1, 'Voici un commentaire', '09/03/2023', 1),
+(105, 31, 1, 'Commentaire', '09/03/2023', 0),
+(106, 31, 1, 'fefe', '09/03/2023', 0),
+(107, 31, 1, 'fefe', '09/03/2023', 0),
+(108, 31, 1, 'fefe', '09/03/2023', 0),
+(109, 31, 1, 'fefe', '09/03/2023', 0),
+(110, 31, 1, 'fefe', '09/03/2023', 0),
+(111, 31, 1, 'fefe', '09/03/2023', 0),
+(112, 31, 1, 'fefe', '09/03/2023', 0),
+(113, 31, 1, 'fefe', '09/03/2023', 0),
+(114, 31, 1, 'fefe', '09/03/2023', 0),
+(115, 31, 1, 'fefe', '09/03/2023', 0),
+(116, 31, 1, 'fefe', '09/03/2023', 0),
+(117, 31, 1, 'fefe', '09/03/2023', 0),
+(118, 31, 1, 'fefe', '09/03/2023', 0),
+(119, 31, 1, 'fefe', '09/03/2023', 0),
+(120, 31, 1, 'fefe', '09/03/2023', 0),
+(121, 31, 1, 'fefe', '09/03/2023', 0),
+(122, 31, 1, 'fefe', '09/03/2023', 0),
+(123, 31, 1, 'fefe', '09/03/2023', 0),
+(124, 31, 1, 'fefe', '09/03/2023', 0),
+(125, 31, 1, 'fefe', '09/03/2023', 0),
+(126, 31, 1, 'fefe', '09/03/2023', 0),
+(127, 31, 1, 'fefe', '09/03/2023', 0),
+(128, 31, 1, 'fefe', '09/03/2023', 0),
+(129, 31, 1, 'fefe', '09/03/2023', 0),
+(130, 31, 1, 'fefe', '09/03/2023', 0),
+(131, 31, 1, 'fefe', '09/03/2023', 0),
+(132, 39, 1, 'oui', '09/03/2023', 0),
+(133, 31, 1, '&lt;h1&gt;oui&lt;/h1&gt;', '09/03/2023', 1),
+(134, 31, 1, '&lt;h1&gt;oui&lt;/h1&gt;', '09/03/2023', 0);
 
 -- --------------------------------------------------------
 
@@ -310,6 +344,38 @@ INSERT INTO `blog_posts` (`id`, `category_id`, `user_id`, `post_title`, `post_te
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `blog_request_contact`
+--
+
+CREATE TABLE `blog_request_contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `blog_request_contact`
+--
+
+INSERT INTO `blog_request_contact` (`id`, `name`, `email`, `phone`, `message`, `created_at`) VALUES
+(21, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(22, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(23, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(24, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(25, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(26, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(27, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(28, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(29, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(30, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023'),
+(31, 'Tillet Tony', 'tony.tillet@gmail.com', '0610892483', 'message', '09/03/2023');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `blog_users`
 --
 
@@ -339,7 +405,8 @@ INSERT INTO `blog_users` (`id`, `user_name`, `first_name`, `last_name`, `email`,
 (8, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
 (9, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
 (10, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 0),
-(11, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1);
+(11, 'Tonytillet', 'Tillet', 'Tony', 'tony.tillet@gmail.com', '$2y$10$fM/RIf2nHTez2.N.BwbX3uLRxllvCA985N6A8X7EzltcrtS5FdoUG', '2022-10-26 11:48:37', 1),
+(12, 'tony.tillet@gmail.com', 'Tony', 'Tillet', 'tony.tillet@gmail.com', '$2y$10$aTHBfsxQYOPty7C00VUou.TEEJZwyZxsRBof2vjs2ZnuQmEV.p1qK', '2023-03-09 15:48:47', 1);
 
 --
 -- Index pour les tables déchargées
@@ -376,6 +443,12 @@ ALTER TABLE `blog_posts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `blog_request_contact`
+--
+ALTER TABLE `blog_request_contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `blog_users`
 --
 ALTER TABLE `blog_users`
@@ -395,7 +468,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT pour la table `blog_comments`
 --
 ALTER TABLE `blog_comments`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT pour la table `blog_pages`
@@ -410,10 +483,16 @@ ALTER TABLE `blog_posts`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
+-- AUTO_INCREMENT pour la table `blog_request_contact`
+--
+ALTER TABLE `blog_request_contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT pour la table `blog_users`
 --
 ALTER TABLE `blog_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

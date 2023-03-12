@@ -2,11 +2,14 @@
 
 namespace App\Trait;
 
+use JetBrains\PhpStorm\NoReturn;
+
 class Logout
 {
-    public function __invoke(): void
+    #[NoReturn] public function __construct()
     {
         session_destroy();
-        header('Location: '.HTTP.'panel/login');
+        $redirect = new Redirect();
+        $redirect->redirect('login/logger');
     }
 }

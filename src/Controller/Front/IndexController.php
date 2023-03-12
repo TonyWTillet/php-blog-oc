@@ -39,6 +39,8 @@ class IndexController extends FrontController
         $data['globals'] = $globals;
         $data['posts'] = $posts;
         $data['users'] = $users;
+        $data['session'] = $_SESSION['user'];
+        dump($_SESSION['user']);
         require $this->Twig('home', $data, 'data');
     }
 }

@@ -32,6 +32,11 @@ class CommentQueries extends BackController
         return $this->commentRepository->findAllCommentsByPostId($postId);
     }
 
+    public function getCommentsValidateByPostId(int $postId): array
+    {
+        return $this->commentRepository->findAllCommentsValidateByPostId($postId);
+    }
+
     public function getCommentsValidate(): array
     {
         return $this->commentRepository->findAllCommentsValidate();

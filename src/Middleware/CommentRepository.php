@@ -54,6 +54,23 @@ class CommentRepository extends Database
 
     }
 
+    public function findAllCommentsValidateByPostId(int $postId): array
+    {
+        try {
+            $req = $this->getPDO()->prepare("SELECT a.*, b.id as articlesId, c.id as usersId, c.user_name , b.post_title FROM $this->table a LEFT JOIN blog_posts b ON b.id = a.post_id LEFT JOIN blog_users c ON a.user_id = c.id WHERE a.flag = 1 AND a.post_id = ? ORDER BY a.created_at DESC");
+            $req->execute(array($postId));
+            $comments=$req->fetchAll(PDO::FETCH_CLASS, Comment::class);
+            if (!$comments) {
+                return [];
+            }
+            return $comments;
+
+        } catch(PDOException $e) {
+            throw new \Exception('Error while, fetching comments  '. $e->getMessage());
+        }
+
+    }
+
     public function findAllCommentsValidate(): array
     {
         try {

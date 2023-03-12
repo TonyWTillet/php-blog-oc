@@ -57,6 +57,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start mx-auto">
+
                 <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}">Accueil</a>
                 </li>
@@ -68,7 +69,7 @@
                 <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}contact">Contact</a>
                 </li>
-
+                {% if data.session is empty %}
                 <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}panel">Connexion</a>
                 </li>
@@ -76,6 +77,11 @@
                 <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}inscription">Inscription</a>
                 </li>
+                {% else %}
+                    <li class="navbar-item">
+                        <a class="navbar-link is-arrowless" href="{{ constant('HTTP') }}logout">Deconnexion</a>
+                    </li>
+                {% endif %}
             </div>
 
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Commands\Add\AddContactCommands;
 use App\Queries\CategoryQueries;
 use App\Queries\GlobalsQueries;
 use App\Queries\PostQueries;
@@ -12,10 +13,12 @@ use Exception;
 class ContactController extends FrontController
 {
     private GlobalsQueries $globalsQueries;
+    private AddContactCommands $addContactCommands;
 
     public function __construct()
     {
         $this->globalsQueries = new GlobalsQueries();
+        $this->addContactCommands = new AddContactCommands();
     }
 
     /**
@@ -25,6 +28,9 @@ class ContactController extends FrontController
     {
         $globals = $this->globalsQueries->getGlobals();
         $data['globals'] = $globals;
+        if (!empty($_POST)) {
+            $data['message'] = $this->addContactCommands->add($_POST);
+        }
         require $this->Twig('contact', $data, 'data');
     }
 }

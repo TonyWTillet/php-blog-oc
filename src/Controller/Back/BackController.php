@@ -3,7 +3,9 @@
 namespace App\Controller\Back;
 
 use App\Entity\Comment;
+use Exception;
 use JetBrains\PhpStorm\NoReturn;
+use PDOException;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
@@ -42,13 +44,15 @@ class BackController
         ]);
     }
 
+    /**
+     * @throws Exception
+     */
     public function Counter() {
         try {
             $req = $this->getPDO()->prepare("SELECT COUNT(*) FROM $this->table");
-            $req->execute(array());
-            $counter=$req->fetchAll();
+            $counter = $req->execute();
             if (!$counter) {
-                return [];
+                return '0';
             }
             return $counter;
 

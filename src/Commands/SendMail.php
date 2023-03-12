@@ -2,6 +2,7 @@
 
 namespace App\Commands;
 
+use App\Trait\IsLocalhost;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\SendmailTransport;
@@ -10,16 +11,19 @@ use Throwable;
 
 class SendMail
 {
+    private IsLocalhost $localhost;
+
+    public function __construct()
+    {
+        $this->localhost = new IsLocalhost();
+    }
     function sendMail($sujet, $contenu, $to, $fichier = NULL): bool
     {
-        if($this->isLocalhost()) {
-
+        if($this->localhost->isLocalhost()) {
             $transport = Transport::fromDsn('smtp://a5cfb3f92396f6:6bc13201a0e7d4@smtp.mailtrap.io:2525?encryption=tls&auth_mode=login');
-
         }
         else {
             $transport = new SendmailTransport();
-
         }
         $mailer = new Mailer($transport);
 
@@ -56,7 +60,4 @@ class SendMail
 
     }
 
-    public function isLocalhost(): bool {
-        return in_array($_SERVER['HTTP_HOST'], array('localhost:4554','localhost','127.0.0.1','192.168.1.72','wagaia')) or strstr($_SERVER['HTTP_HOST'],'.test');
-    }
 }

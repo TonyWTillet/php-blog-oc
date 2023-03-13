@@ -15,6 +15,7 @@ class User
     private string $flag;
 
     private dateFormat $dateFormat;
+    private string $role;
 
     public function __construct()
     {
@@ -57,4 +58,8 @@ class User
         return $this->flag;
     }
 
+    public function getRole(): string
+    {
+        return $this->role;
+    }
 }

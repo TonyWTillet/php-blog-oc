@@ -25,6 +25,7 @@ class PolitiqueController extends FrontController
     {
         $globals = $this->globalsQueries->getGlobals();
         $data['globals'] = $globals;
+        $data['session'] = $_SESSION['user'];
         require $this->Twig('politique', $data, 'data');
     }
 }

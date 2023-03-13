@@ -31,6 +31,7 @@ class ContactController extends FrontController
         if (!empty($_POST)) {
             $data['message'] = $this->addContactCommands->add($_POST);
         }
+        $data['session'] = $_SESSION['user'];
         require $this->Twig('contact', $data, 'data');
     }
 }

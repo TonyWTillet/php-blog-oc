@@ -2,9 +2,7 @@
 
 namespace App\Controller\Back;
 
-use App\Entity\Comment;
 use Exception;
-use JetBrains\PhpStorm\NoReturn;
 use PDOException;
 use Twig\Environment;
 use Twig\Extension\DebugExtension;
@@ -12,6 +10,10 @@ use Twig\Loader\FilesystemLoader;
 
 class BackController
 {
+    public function __construct()
+    {
+
+    }
     /**
      * It checks if the user is logged in.
      */
@@ -30,13 +32,14 @@ class BackController
      *
      * @return string A new instance of the Twig Environment class.
      */
-    public function Twig(string $template,  $array, $name)
+    public function Twig(string $template,  $array, $name): string
     {
         $loader = new FilesystemLoader(BACK_VIEW);
         $twig = new Environment($loader, [
             'cache' => false,
             'debug'=> true
         ]);
+        $twig->addGlobal('session', $_SESSION);
         $twig->addExtension(new DebugExtension());
 
         echo $twig->render($template.'.twig', [

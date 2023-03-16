@@ -18,6 +18,4 @@ class EditCommands extends Database
         $this->validator = new RedirectParent();
         $this->verifications = new PostVerifications();
     }
-
-
 }

@@ -10,4 +10,3 @@ $dotenv->load();
 $homeController = new HomeController();
 
 $homeController->index();
-

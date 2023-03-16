@@ -503,7 +503,6 @@ mark {
   padding: 0.4rem 0 !important;
 }
 .navbar-item .navbar-link {
-  text-transform: capitalize;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
 }

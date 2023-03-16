@@ -10,6 +10,6 @@ class Logout
     {
         session_destroy();
         $redirect = new Redirect();
-        $redirect->redirect('login/logger');
+        $redirect->redirectHome();
     }
 }

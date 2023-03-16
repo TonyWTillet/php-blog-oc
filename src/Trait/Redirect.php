@@ -10,4 +10,9 @@ class Redirect
     {
         header('Location: ' . HTTP .'panel/'. $page);
     }
+
+    #[NoReturn] public function redirectHome(): void
+    {
+        header('Location: ' . HTTP);
+    }
 }

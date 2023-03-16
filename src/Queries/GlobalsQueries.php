@@ -25,7 +25,11 @@ class GlobalsQueries
      */
     public function getGlobals(): array
     {
-        return $this->globalRepository->findAllGlobals();
+        $globals = $this->globalRepository->findAllGlobals();
+        foreach ($globals as  $value) {
+            $globals[$value->getName()] = $value->getValue();
+        }
+        return $globals;
     }
 
 }

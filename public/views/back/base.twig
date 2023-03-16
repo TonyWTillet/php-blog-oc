@@ -76,12 +76,12 @@
                             <li class="icons dropdown">
                                 <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
                                     <span class="activity active"></span>
-                                    <img src="images/user/1.png" height="40" width="40" alt="">
+                                    <img src="{{ constant('ASSETS_BACK') }}images/user/1.png" height="40" width="40" alt="">
                                 </div>
                                 <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                                     <div class="dropdown-content-body">
                                         <ul>
-                                            <li><a href="{{ constant('HTTP') }}panel/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                            <li><a href="{{ constant('HTTP') }}panel/logout"><i class="icon-key"></i> <span>Déconnexion</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,6 +106,7 @@
                                 <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                             </a>
                         </li>
+                        {% if session.user.role == 'admin' %}
                         <li class="nav-label">Blog</li>
                         <li>
                             <a href="{{ constant('PANEL')}}category" aria-expanded="false">
@@ -132,6 +133,7 @@
                                 </li>
                             </ul>
                         </li>
+                        {% endif %}
                         <li class="nav-label">Utilisateurs</li>
                         <li>
                             <a href="{{ constant('PANEL') }}category/add" aria-expanded="false">
@@ -154,6 +156,7 @@
                                 <i class="icon-badge menu-icon"></i><span class="nav-text">Documentation</span>
                             </a>
                         </li>
+                        {% if session.user.role == 'admin' %}
                         <li class="nav-label">Autres</li>
                         <li>
                             <a href="{{ constant('PANEL') }}globals" aria-expanded="false">
@@ -165,7 +168,7 @@
                                 <i class="icon-badge menu-icon"></i><span class="nav-text">Demandes d'inscriptions</span>
                             </a>
                         </li>
-
+                        {% endif %}
                     </ul>
                 </div>
             </div>

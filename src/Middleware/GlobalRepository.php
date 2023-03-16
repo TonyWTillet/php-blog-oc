@@ -23,12 +23,12 @@ class GlobalRepository extends Database
     {
         try {
             $req = $this->getPDO()->prepare("SELECT * FROM $this->table");
-            $req->execute(array());
-            $categories=$req->fetchAll(PDO::FETCH_CLASS, Globals::class);
-            if (!$categories) {
+            $req->execute();
+            $globals=$req->fetchAll(PDO::FETCH_CLASS, Globals::class);
+            if (!$globals) {
                 return [];
             }
-            return $categories;
+            return $globals;
 
         } catch(PDOException $e) {
             throw new \Exception('Error while, fetching globals informations '. $e->getMessage());

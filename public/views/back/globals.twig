@@ -17,52 +17,51 @@
                     <div class="card-body">
                         <h4 class="card-title">Informations:</h4>
                         <div class="basic-form">
-                            <form>
+                            <form method="post">
                                     {% for global in globals %}
                                         {% if global.getName() == 'email' %}
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control" placeholder="{{ global.getValue() }}" name="global-email">
+                                                <input type="email" class="form-control" value="{{ global.getValue() }}" name="name[email]">
+                                                {#<input type="hidden" class="form-control" value="email" name="name[]">#}
                                             </div>
                                         </div>
                                         {% elseif global.getName() == 'phone' %}
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label>Téléphone</label>
-                                                    <input type="tel" class="form-control" placeholder="{{ global.getValue() }}" name="global-phone">
+                                                    <input type="tel" class="form-control" value="{{ global.getValue() }}" name="name[phone]">
+                                                    {#<input type="hidden" class="form-control" value="phone" name="name[]">#}
                                                 </div>
                                             </div>
                                         {% elseif global.getName() == 'github' %}
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label>Github:</label>
-                                                    <input type="text" class="form-control" placeholder="{{ global.getValue() }}" name="global-github">
+                                                    <input type="text" class="form-control" value="{{ global.getValue() }}" name="name[github]">
+                                                    {#<input type="hidden" class="form-control" value="github" name="name[]">#}
                                                 </div>
                                             </div>
                                         {% elseif global.getName() == 'portfolio' %}
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label>Portfolio:</label>
-                                                    <input type="text" class="form-control" placeholder="{{ global.getValue() }}" name="global-portfolio">
+                                                    <input type="text" class="form-control" value="{{ global.getValue() }}" name="name[portfolio]">
+                                                    {#<input type="hidden" class="form-control" value="portfolio" name="name[]">#}
                                                 </div>
                                             </div>
-                                        {% elseif global.getName() == 'g-maps' %}
+                                        {% elseif global.getName() == 'linkedin' %}
                                             <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label>Iframe Google Maps:</label>
-                                                    <textarea class="form-control h-150px" rows="6" id="g-maps" placeholder="{{ global.getValue() }}" name="global-g-maps"></textarea>
-                                                </div>
-                                            </div>
-                                        {% elseif global.getName() == 'g-analytics' %}
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label>Google Analytics:</label>
-                                                    <textarea class="form-control h-150px" rows="6" id="g-analytics" placeholder="{{ global.getValue() }}" name="global-g-analytics"></textarea>
+                                                <div class="form-group col-md-6">
+                                                    <label>Linkedin:</label>
+                                                    <input type="text" class="form-control" value="{{ global.getValue() }}" name="name[linkedin]">
+                                                    {#<input type="hidden" class="form-control" value="linkedin" name="name[]">#}
                                                 </div>
                                             </div>
                                         {% endif %}
                                     {% endfor %}
+                                    <button type="submit" class="btn btn-dark">Modifier</button>
                             </form>
                         </div>
                     </div>

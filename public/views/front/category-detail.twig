@@ -27,7 +27,7 @@
                                     <h3 class="mb-3"><a class="post-title" href="{{ constant('HTTP') }}article/{{ post.getNavUrl }}">{{ post.getPostTitle }}</a></h3>
                                     <ul class="card-meta list-inline">
                                         <li class="list-inline-item">
-                                            <a href="author-single.html" class="card-meta-author">
+                                            <a class="card-meta-author">
                                                 <img src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
                                                 <span>{{ post.first_name }} {{ post.last_name }}</span>
                                             </a>
@@ -87,7 +87,7 @@
                                     <img class="widget-author-image" src="{{ constant('ASSETS_FRONT') }}images/john-doe.jpg">
                                 </div>
                                 <div class="media-body">
-                                    <h5 class="mb-1"><a class="post-title" href="author-single.html">{{ user.getFirstName() }} {{ user.getLastName() }}</a></h5>
+                                    <h5 class="mb-1"><a class="post-title" >{{ user.getFirstName() }} {{ user.getLastName() }}</a></h5>
                                     <span>Membre depuis : {{ user.getCreatedAt() }}</span>
                                 </div>
                             </div>

@@ -64,10 +64,7 @@ class HomeController
 
             $controller = 'App\Controller\\Front\\' . ucfirst($page) . 'Controller';
             $controller = new $controller();
-
             $controller->$action();
         }
-
-
     }
 }

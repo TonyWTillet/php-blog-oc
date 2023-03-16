@@ -11,3 +11,4 @@ class DocumentationController extends BackController implements RequireAuhtentif
         require $this->twig('documentation', $documentation, 'documentation');
     }
 }
+

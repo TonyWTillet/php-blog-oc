@@ -46,7 +46,4 @@ class BackController
             $name => $array,
         ]);
     }
-
-
-
 }

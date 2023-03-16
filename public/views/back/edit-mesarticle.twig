@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Modifier l'article: {{ article[0].getPostTitle() }} </h4>
+                        <div class="basic-form">
+                            <form method="post">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Titre:</label>
+                                        <input type="text" class="form-control" placeholder=" {{ article[0].getPostTitle() }}" name="article_title" value="{{ article[0].getPostTitle() }}">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Catégorie:</label>
+                                        <input type="text" class="form-control" placeholder=" {{ article[0].category_title }}" disabled name="article_category" value="{{ article[0].category_title }}">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Chapo:</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" name="article_chapo">{{ article[0].getPostChapo }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Texte:</label>
+                                        <textarea class="form-control h-150px" rows="6" id="comment" name="article_text">{{ article[0].getPostText }}</textarea>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="modified_at" value="">
+                                <div class="form-row">
+                                    <div class="form-group col-md-auto">
+                                        <a href="{{ constant('PANEL') }}mesarticles" class="btn mb-1 btn-primary btn-md">Retour</a>
+                                    </div>
+                                    <div class="form-group col-md-auto">
+                                        <button type="submit" class="btn mb-1 btn-success btn-md">Enregistrer</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
+

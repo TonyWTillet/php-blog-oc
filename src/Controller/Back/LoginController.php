@@ -16,8 +16,6 @@ class LoginController extends BackController
      */
     #[NoReturn] public function logger(): void
     {
-        global $error;
-
         $user = new User();
         $loggin = $this->isLoggin();
 

@@ -2,11 +2,11 @@
 
 namespace App\Controller\Back;
 
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CategoryQueries;
 use App\Service\RowCounter;
 
-class DashboardController extends BackController implements RequireAuhtentification
+class DashboardController extends BackController implements RequireAuhtentificationInterface
 {
     private CategoryQueries $categoryService;
     private RowCounter $counter;

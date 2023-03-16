@@ -5,10 +5,10 @@ namespace App\Controller\Back;
 use App\Commands\Add\CategoryAddCommands;
 use App\Commands\Delete\CategoryDeleteCommands;
 use App\Commands\Edit\CategoryEditCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CategoryQueries;
 
-class CategoryController extends BackController implements RequireAuhtentification
+class CategoryController extends BackController implements RequireAuhtentificationInterface
 {
     private CategoryQueries $categoryService;
     private CategoryDeleteCommands $categoryCommands;

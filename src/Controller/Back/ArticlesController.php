@@ -5,11 +5,11 @@ namespace App\Controller\Back;
 use App\Commands\Add\AddPostsCommands;
 use App\Commands\Delete\PostsDeleteCommands;
 use App\Commands\Edit\PostsEditCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CategoryQueries;
 use App\Queries\PostQueries;
 
-class ArticlesController extends BackController implements RequireAuhtentification
+class ArticlesController extends BackController implements RequireAuhtentificationInterface
 {
     private PostQueries $postQueries;
     private PostsDeleteCommands $postCommands;

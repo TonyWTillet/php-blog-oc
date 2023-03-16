@@ -17,6 +17,7 @@ class SendMail
     {
         $this->localhost = new IsLocalhost();
     }
+    // This will send a mail to the user
     function sendMail($sujet, $contenu, $to, $fichier = NULL): bool
     {
         if($this->localhost->isLocalhost()) {

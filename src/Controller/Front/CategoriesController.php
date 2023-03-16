@@ -38,6 +38,7 @@ class CategoriesController extends FrontController
         $data['globals'] = $globals;
         $data['posts'] = $posts;
         $data['users'] = $users;
+        $data['session'] = $_SESSION['user'];
         require $this->Twig('category', $data, 'data');
     }
 

@@ -1,8 +1,5 @@
 (function($) {
     "use strict"
-
-
-    //todo list
     $(".tdl-new").on('keypress', function(e) {
 
         var code = (e.keyCode ? e.keyCode : e.which);

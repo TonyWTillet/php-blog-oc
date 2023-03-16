@@ -1,3 +1,2 @@
-/vendor/
-/.idea/
+/vendor/$ git config --global core.excludesfile ~/.gitignore
 /public/.env

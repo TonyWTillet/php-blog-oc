@@ -24,6 +24,11 @@ class PostQueries
     {
         return $this->postRepository->findAllPosts();
     }
+
+    public function getPostsByUser(int $user_id): array
+    {
+        return $this->postRepository->findAllPostsByUser($user_id);
+    }
     public function getRecentPost(): array
     {
         return $this->postRepository->findRecentPosts();

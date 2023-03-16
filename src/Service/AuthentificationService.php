@@ -27,7 +27,6 @@ class AuthentificationService
 
         if (!isset($_SESSION['user'])) {
             header("location:".PANEL."login/logger");
-            exit();
         }
     }
 }

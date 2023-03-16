@@ -37,7 +37,6 @@ class LoginController extends BackController
                         $session->dataSession($user_data);
 
                         header("location:".PANEL."dashboard");
-                        exit();
                     } else {
 
                         $error = 'Mot de passe invalide';
@@ -50,7 +49,6 @@ class LoginController extends BackController
         } else {
 
             header("location:".PANEL."dashboard");
-            exit();
         }
 
         require $this->twig('login', $error, 'error');

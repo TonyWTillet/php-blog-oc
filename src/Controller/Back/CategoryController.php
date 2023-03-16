@@ -5,10 +5,10 @@ namespace App\Controller\Back;
 use App\Commands\Add\CategoryAddCommands;
 use App\Commands\Delete\CategoryDeleteCommands;
 use App\Commands\Edit\CategoryEditCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CategoryQueries;
 
-class CategoryController extends BackController implements RequireAuhtentification
+class CategoryController extends BackController implements RequireAuhtentificationInterface
 {
     private CategoryQueries $categoryService;
     private CategoryDeleteCommands $categoryCommands;
@@ -26,18 +26,18 @@ class CategoryController extends BackController implements RequireAuhtentificati
     public function index()
     {
         $categories = $this->categoryService->getCategories();
-        require $this->Twig('category', $categories, 'categories');
+        require $this->twig('category', $categories, 'categories');
     }
 
     public function edit() {
         $category= $this->categoryService->getCategoryById($_GET['id']);
         $this->categoryEditCommands->save($_POST['category_title'], $_GET['id']);
-        require $this->Twig('edit-category', $category, 'category');
+        require $this->twig('edit-category', $category, 'category');
     }
 
     public function add() {
         $this->categoryAddCommands->add($_POST);
-        require $this->Twig('add-category', $error, 'error');
+        require $this->twig('add-category', $error, 'error');
     }
 
     public function delete() {

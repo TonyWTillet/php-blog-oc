@@ -16,8 +16,6 @@ class LoginController extends BackController
      */
     #[NoReturn] public function logger(): void
     {
-        global $error;
-
         $user = new User();
         $loggin = $this->isLoggin();
 
@@ -39,7 +37,6 @@ class LoginController extends BackController
                         $session->dataSession($user_data);
 
                         header("location:".PANEL."dashboard");
-                        exit();
                     } else {
 
                         $error = 'Mot de passe invalide';
@@ -52,10 +49,9 @@ class LoginController extends BackController
         } else {
 
             header("location:".PANEL."dashboard");
-            exit();
         }
 
-        require $this->Twig('login', $error, 'error');
+        require $this->twig('login', $error, 'error');
     }
 
 }

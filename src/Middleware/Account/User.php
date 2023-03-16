@@ -53,6 +53,7 @@ class User extends Database
             return $users;
         } catch(PDOException $e) {
             echo $e->getMessage();
+            return new \stdClass();
         }
     }
 }

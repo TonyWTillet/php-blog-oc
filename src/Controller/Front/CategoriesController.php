@@ -39,7 +39,7 @@ class CategoriesController extends FrontController
         $data['posts'] = $posts;
         $data['users'] = $users;
         $data['session'] = $_SESSION['user'];
-        require $this->Twig('category', $data, 'data');
+        require $this->twig('category', $data, 'data');
     }
 
     public function post()
@@ -53,6 +53,6 @@ class CategoriesController extends FrontController
         $data['globals'] = $globals;
         $data['posts'] = $posts;
         $data['users'] = $users;
-        require $this->Twig('category-detail', $data, 'data');
+        require $this->twig('category-detail', $data, 'data');
     }
 }

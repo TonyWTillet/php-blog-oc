@@ -4,7 +4,7 @@ namespace App\Commands;
 
 class SecurePost
 {
-    public function SecurePost(array $data): array
+    public function securePost(array $data): array
     {
         foreach ($data as $key => $value) {
             $data[$key] = trim($value);

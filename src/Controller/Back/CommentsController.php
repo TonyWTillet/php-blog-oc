@@ -6,10 +6,10 @@ namespace App\Controller\Back;
 
 use App\Commands\Accept\CommentsAcceptCommands;
 use App\Commands\Delete\CommentsDeleteCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CommentQueries;
 
-class CommentsController extends BackController implements RequireAuhtentification
+class CommentsController extends BackController implements RequireAuhtentificationInterface
 {
     private CommentQueries $commentQueries;
     private CommentsDeleteCommands $commentsCommands;
@@ -25,13 +25,13 @@ class CommentsController extends BackController implements RequireAuhtentificati
     public function index()
     {
         $comments = $this->commentQueries->getComments();
-        require $this->Twig('comments', $comments, 'comments');
+        require $this->twig('comments', $comments, 'comments');
     }
 
     public function validate()
     {
         $comments = $this->commentQueries->getCommentsValidate();
-        require $this->Twig('comments_validate', $comments, 'comments');
+        require $this->twig('comments_validate', $comments, 'comments');
     }
 
     public function accept() {

@@ -49,7 +49,7 @@ class User
 
     public function getCreatedAt(): string
     {
-        $this->created_at = $this->dateFormat->ModifyDateFormat($this->created_at);
+        $this->created_at = $this->dateFormat->modifyDateFormat($this->created_at);
         return $this->created_at;
     }
 

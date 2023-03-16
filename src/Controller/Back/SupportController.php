@@ -2,12 +2,12 @@
 
 namespace App\Controller\Back;
 
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 
-class SupportController extends BackController implements RequireAuhtentification
+class SupportController extends BackController implements RequireAuhtentificationInterface
 {
     public function index()
     {
-        require $this->Twig('support', $support, 'support');
+        require $this->twig('support', $support, 'support');
     }
 }

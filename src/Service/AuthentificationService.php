@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use JetBrains\PhpStorm\NoReturn;
 
 class AuthentificationService
@@ -16,7 +16,7 @@ class AuthentificationService
      */
     public function verifyAuthentification($controller): bool
     {
-        return $controller instanceof RequireAuhtentification;
+        return $controller instanceof RequireAuhtentificationInterface;
     }
 
     /**
@@ -27,7 +27,6 @@ class AuthentificationService
 
         if (!isset($_SESSION['user'])) {
             header("location:".PANEL."login/logger");
-            exit();
         }
     }
 }

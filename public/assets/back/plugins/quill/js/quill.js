@@ -1863,7 +1863,7 @@ EVENTS.forEach(function (eventName) {
     }
 
     [].slice.call(document.querySelectorAll('.ql-container')).forEach(function (node) {
-      // TODO use WeakMap
+
       if (node.__quill && node.__quill.emitter) {
         var _node$__quill$emitter;
 
@@ -2818,7 +2818,6 @@ var Selection = function () {
       var native = _this.getNativeRange();
       if (native == null) return;
       if (native.start.node === _this.cursor.textNode) return; // cursor.restore() will handle
-      // TODO unclear if this has negative side effects
       _this.emitter.once(_emitter4.default.events.SCROLL_UPDATE, function () {
         try {
           _this.setNativeRange(native.start.node, native.start.offset, native.end.node, native.end.offset);
@@ -2888,7 +2887,7 @@ var Selection = function () {
       if (nativeRange.start.node !== this.cursor.textNode) {
         var blot = _parchment2.default.find(nativeRange.start.node, false);
         if (blot == null) return;
-        // TODO Give blot ability to not split
+
         if (blot instanceof _parchment2.default.Leaf) {
           var after = blot.split(nativeRange.start.offset);
           blot.parent.insertBefore(this.cursor, after);
@@ -5768,7 +5767,7 @@ var ShadowBlot = /** @class */ (function () {
         return this.parent.children.offset(this) + this.parent.offset(root);
     };
     ShadowBlot.prototype.optimize = function (context) {
-        // TODO clean up once we use WeakMap
+
         // @ts-ignore
         if (this.domNode[Registry.DATA_KEY] != null) {
             // @ts-ignore
@@ -7021,7 +7020,7 @@ var LinkedList = /** @class */ (function () {
     };
     LinkedList.prototype.iterator = function (curNode) {
         if (curNode === void 0) { curNode = this.head; }
-        // TODO use yield when we can
+
         return function () {
             var ret = curNode;
             if (curNode != null)
@@ -7155,7 +7154,7 @@ var ScrollBlot = /** @class */ (function (_super) {
         // so we cannot just mutations.push.apply(mutations, this.observer.takeRecords());
         while (records.length > 0)
             mutations.push(records.pop());
-        // TODO use WeakMap
+
         var mark = function (blot, markParent) {
             if (markParent === void 0) { markParent = true; }
             if (blot == null || blot === _this)
@@ -7223,7 +7222,7 @@ var ScrollBlot = /** @class */ (function (_super) {
         var _this = this;
         if (context === void 0) { context = {}; }
         mutations = mutations || this.observer.takeRecords();
-        // TODO use WeakMap
+
         mutations
             .map(function (mutation) {
             var blot = Registry.find(mutation.target, true);
@@ -8947,7 +8946,7 @@ var Clipboard = function (_Module) {
             break;
           default:
             [].forEach.call(_this3.container.querySelectorAll(selector), function (node) {
-              // TODO use weakmap
+
               node[DOM_KEY] = node[DOM_KEY] || [];
               node[DOM_KEY].push(matcher);
             });
@@ -9399,7 +9398,7 @@ var Toolbar = function (_Module) {
         }
         _this2.update(range);
       });
-      // TODO use weakmap
+
       this.controls.push([format, input]);
     }
   }, {
@@ -9425,7 +9424,7 @@ var Toolbar = function (_Module) {
             option = input.querySelector('option[value="' + value + '"]');
           }
           if (option == null) {
-            input.value = ''; // TODO make configurable?
+            input.value = '';
             input.selectedIndex = -1;
           } else {
             option.selected = true;

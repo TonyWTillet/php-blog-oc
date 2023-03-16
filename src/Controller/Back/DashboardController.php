@@ -2,11 +2,11 @@
 
 namespace App\Controller\Back;
 
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\CategoryQueries;
 use App\Service\RowCounter;
 
-class DashboardController extends BackController implements RequireAuhtentification
+class DashboardController extends BackController implements RequireAuhtentificationInterface
 {
     private CategoryQueries $categoryService;
     private RowCounter $counter;
@@ -26,6 +26,6 @@ class DashboardController extends BackController implements RequireAuhtentificat
         $data['posts'] = $this->counter->getRowsNumber('blog_posts');
         $data['users'] = $this->counter->getRowsNumber('blog_users');
         $data['comments'] = $this->counter->getRowsNumber('blog_comments');
-        require $this->Twig('dashboard', $data, 'data');
+        require $this->twig('dashboard', $data, 'data');
     }
 }

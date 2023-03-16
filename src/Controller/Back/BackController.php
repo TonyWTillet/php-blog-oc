@@ -33,7 +33,7 @@ class BackController
      *
      * @return string A new instance of the Twig Environment class.
      */
-    public function Twig(string $template,  $array, $name): string
+    public function twig(string $template,  $array, $name): void
     {
         $loader = new FilesystemLoader(BACK_VIEW);
         $twig = new Environment($loader, [
@@ -46,7 +46,4 @@ class BackController
             $name => $array,
         ]);
     }
-
-
-
 }

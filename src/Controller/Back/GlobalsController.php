@@ -4,10 +4,10 @@ namespace App\Controller\Back;
 
 
 use App\Commands\Edit\GlobalsEditCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\GlobalsQueries;
 
-class GlobalsController extends BackController implements RequireAuhtentification
+class GlobalsController extends BackController implements RequireAuhtentificationInterface
 {
     private GlobalsQueries $globalsQueries;
     private GlobalsEditCommands $globalsCommands;
@@ -25,6 +25,6 @@ class GlobalsController extends BackController implements RequireAuhtentificatio
         if ($_POST) {
             $modif = $this->globalsCommands->save($_POST['name']);
         }
-        require $this->Twig('globals', $globals, 'globals');
+        require $this->twig('globals', $globals, 'globals');
     }
 }

@@ -1,8 +1,5 @@
 (function($) {
     "use strict"
-
-
-    //todo list
     $(".tdl-new").on('keypress', function(e) {
 
         var code = (e.keyCode ? e.keyCode : e.which);
@@ -89,8 +86,7 @@
             borderWidth: 1, 
             highlightBorderWidth: 3, 
             highlightFillColor: "rgba(0,123,255,0.5)", 
-            highlightBorderColor: "transparent", 
-            borderWidth: 1
+            highlightBorderColor: "transparent",
         }, 
         bubblesConfig: {
             popupTemplate: function (e, i) {

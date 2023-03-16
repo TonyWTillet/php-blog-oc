@@ -1733,18 +1733,12 @@ Licensed under the MIT license.
                     return;
 
                 var box = axis.box, f = axis.font;
-                // placeholder.append('<div style="position:absolute;opacity:0.10;background-color:red;left:' + box.left + 'px;top:' + box.top + 'px;width:' + box.width +  'px;height:' + box.height + 'px"></div>') // debug
 
                 ctx.fillStyle = axis.options.color;
-                // Important: Don't use quotes around axis.font.family! Just around single
-                // font names like 'Times New Roman' that have a space or special character in it.
+
                 ctx.font = f.style + " " + f.variant + " " + f.weight + " " + f.size + "px " + f.family;
                 ctx.textAlign = "start";
-                // middle align the labels - top would be more
-                // natural, but browsers can differ a pixel or two in
-                // where they consider the top to be, so instead we
-                // middle align to minimize variation between browsers
-                // and compensate when calculating the coordinates
+
                 ctx.textBaseline = "middle";
 
                 for (var i = 0; i < axis.ticks.length; ++i) {
@@ -1771,20 +1765,11 @@ Licensed under the MIT license.
                                 x = box.left + box.padding;
                         }
 
-                        // account for middle aligning and line number
                         y += line.height/2 + offset;
                         offset += line.height;
 
                         if (!!(window.opera && window.opera.version().split('.')[0] < 12)) {
-                            // FIXME: LEGACY BROWSER FIX
-                            // AFFECTS: Opera < 12.00
 
-                            // round the coordinates since Opera
-                            // otherwise switches to more ugly
-                            // rendering (probably non-hinted) and
-                            // offset the y coordinates since it seems
-                            // to be off pretty consistently compared
-                            // to the other browsers
                             x = Math.floor(x);
                             y = Math.ceil(y - 2);
                         }
@@ -2034,7 +2019,7 @@ Licensed under the MIT license.
 
             var lw = series.lines.lineWidth,
                 sw = series.shadowSize;
-            // FIXME: consider another form of shadow when filling is turned on
+
             if (lw > 0 && sw > 0) {
                 // draw shadow as a thick and thin line with transparency
                 ctx.lineWidth = sw;
@@ -2210,7 +2195,6 @@ Licensed under the MIT license.
             if (lineWidth > 0 && (drawLeft || drawRight || drawTop || drawBottom)) {
                 c.beginPath();
 
-                // FIXME: inline moveTo is buggy with excanvas
                 c.moveTo(left, bottom + offset);
                 if (drawLeft)
                     c.lineTo(left, top + offset);
@@ -2246,7 +2230,6 @@ Licensed under the MIT license.
             ctx.save();
             ctx.translate(plotOffset.left, plotOffset.top);
 
-            // FIXME: figure out a way to add shadows (for instance along the right edge)
             ctx.lineWidth = series.bars.lineWidth;
             ctx.strokeStyle = series.color;
 

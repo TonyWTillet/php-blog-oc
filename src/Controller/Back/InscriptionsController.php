@@ -5,10 +5,10 @@ namespace App\Controller\Back;
 
 use App\Commands\Accept\UsersAcceptCommands;
 use App\Commands\Delete\UsersDeleteCommands;
-use App\Controller\RequireAuhtentification;
+use App\Controller\RequireAuhtentificationInterface;
 use App\Queries\InscriptionsQueries;
 
-class InscriptionsController extends BackController implements RequireAuhtentification
+class InscriptionsController extends BackController implements RequireAuhtentificationInterface
 {
     private InscriptionsQueries $inscriptionsQueries;
     private UsersDeleteCommands $userCommands;
@@ -24,7 +24,7 @@ class InscriptionsController extends BackController implements RequireAuhtentifi
     public function index()
     {
         $inscriptions = $this->inscriptionsQueries->getInscriptions();
-        require $this->Twig('inscriptions', $inscriptions, 'inscriptions');
+        require $this->twig('inscriptions', $inscriptions, 'inscriptions');
     }
 
     public function accept() {

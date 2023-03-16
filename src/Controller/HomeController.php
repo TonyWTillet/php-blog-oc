@@ -18,7 +18,6 @@ class HomeController
 
         if ($redirect == 'panel') {
             $url = explode('/', $_SERVER['REQUEST_URI']);
-
             $page = $url[2];
             if (!empty($url[3])) {
                 $action = explode('?',$url[3])[0];
@@ -35,6 +34,13 @@ class HomeController
             }
 
             $controller = 'App\Controller\\Back\\' . ucfirst($page) . 'Controller';
+            if (!class_exists($controller)) {
+                $controller = 'App\Controller\\Front\\ErrorController';
+            }
+            if (!method_exists($controller, $action)) {
+                $controller = 'App\Controller\\Front\\ErrorController';
+                $action = 'index';
+            }
             $controller = new $controller();
 
             // INTERFACE REQUIRE AUTHENTIFICATION
@@ -42,12 +48,12 @@ class HomeController
             if ($authentificationService->verifyAuthentification($controller)) {
                 $authentificationService->login();
             }
+
             $controller->$action();
         }
 
         else {
             $url = explode('/', $_SERVER['REQUEST_URI']);
-
             $page = $url[1];
             if (!empty($url[2])) {
                 $action = explode('?',$url[2])[0];
@@ -63,6 +69,13 @@ class HomeController
             }
 
             $controller = 'App\Controller\\Front\\' . ucfirst($page) . 'Controller';
+            if (!class_exists($controller)) {
+                $controller = 'App\Controller\\Front\\ErrorController';
+            }
+            if (!method_exists($controller, $action)) {
+                $controller = 'App\Controller\\Front\\ErrorController';
+                $action = 'index';
+            }
             $controller = new $controller();
             $controller->$action();
         }

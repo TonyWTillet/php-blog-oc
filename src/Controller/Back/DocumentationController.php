@@ -8,6 +8,6 @@ class DocumentationController extends BackController implements RequireAuhtentif
 {
     public function index()
     {
-        require $this->Twig('documentation', $documentation, 'documentation');
+        require $this->twig('documentation', $documentation, 'documentation');
     }
 }

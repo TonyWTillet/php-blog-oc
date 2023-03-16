@@ -26,6 +26,6 @@ class DashboardController extends BackController implements RequireAuhtentificat
         $data['posts'] = $this->counter->getRowsNumber('blog_posts');
         $data['users'] = $this->counter->getRowsNumber('blog_users');
         $data['comments'] = $this->counter->getRowsNumber('blog_comments');
-        require $this->Twig('dashboard', $data, 'data');
+        require $this->twig('dashboard', $data, 'data');
     }
 }

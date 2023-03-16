@@ -25,6 +25,6 @@ class GlobalsController extends BackController implements RequireAuhtentificatio
         if ($_POST) {
             $modif = $this->globalsCommands->save($_POST['name']);
         }
-        require $this->Twig('globals', $globals, 'globals');
+        require $this->twig('globals', $globals, 'globals');
     }
 }

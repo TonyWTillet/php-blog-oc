@@ -36,7 +36,7 @@ class AddContactCommands extends AddCommands
             'phone' => $data['phone'],
             'created_at' => date('d/m/Y'),
         ];
-        $data = $this->securePost->SecurePost($data);
+        $data = $this->securePost->securePost($data);
         try {
             $sql = "INSERT INTO $this->table (name, message, email, phone, created_at) VALUES (:name, :message, :email, :phone, :created_at)";
             $req= $this->getPDO()->prepare($sql);

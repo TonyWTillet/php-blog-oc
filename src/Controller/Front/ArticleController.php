@@ -50,7 +50,7 @@ class ArticleController extends FrontController
         if (!empty($_POST)) {
             $data['message'] = $this->addCommentCommands->add($_POST, $_SESSION['user']['id']);
         }
-        require $this->Twig('post', $data, 'data');
+        require $this->twig('post', $data, 'data');
     }
 
 }

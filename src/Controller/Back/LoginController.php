@@ -53,7 +53,7 @@ class LoginController extends BackController
             exit();
         }
 
-        require $this->Twig('login', $error, 'error');
+        require $this->twig('login', $error, 'error');
     }
 
 }

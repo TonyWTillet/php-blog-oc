@@ -32,7 +32,7 @@ class AddInscriptionsCommands extends AddCommands
             'password' => password_hash($data['password'], PASSWORD_DEFAULT),
             'flag' => 0,
         ];
-        $data = $this->securePost->SecurePost($data);
+        $data = $this->securePost->securePost($data);
         try {
             $sql = "INSERT INTO $this->table (user_name, first_name, last_name, email,  password, flag) VALUES (:user_name, :first_name, :last_name, :email, :password, :flag)";
             $req= $this->getPDO()->prepare($sql);

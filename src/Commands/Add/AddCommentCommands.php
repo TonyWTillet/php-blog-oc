@@ -25,7 +25,7 @@ class AddCommentCommands extends AddCommands
             'created_at' => date('d/m/Y'),
             'flag' => 0,
         ];
-        $data = $this->securePost->SecurePost($data);
+        $data = $this->securePost->securePost($data);
         $sql = "INSERT INTO $this->table (post_id, user_id, comment_text, created_at, flag) VALUES (:post_id, :user_id, :comment_text, :created_at, :flag)";
         $req= $this->getPDO()->prepare($sql);
         $req->execute($data);

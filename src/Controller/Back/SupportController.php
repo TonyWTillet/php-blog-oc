@@ -8,6 +8,6 @@ class SupportController extends BackController implements RequireAuhtentificatio
 {
     public function index()
     {
-        require $this->Twig('support', $support, 'support');
+        require $this->twig('support', $support, 'support');
     }
 }

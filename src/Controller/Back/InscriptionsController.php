@@ -24,7 +24,7 @@ class InscriptionsController extends BackController implements RequireAuhtentifi
     public function index()
     {
         $inscriptions = $this->inscriptionsQueries->getInscriptions();
-        require $this->Twig('inscriptions', $inscriptions, 'inscriptions');
+        require $this->twig('inscriptions', $inscriptions, 'inscriptions');
     }
 
     public function accept() {

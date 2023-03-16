@@ -14,7 +14,7 @@ class FrontController
      *
      * @return string A new instance of the Twig Environment class.
      */
-    public function Twig(string $template,  $array, $name): void
+    public function twig(string $template,  $array, $name): void
     {
         $loader = new FilesystemLoader(FRONT_VIEW);
         $twig = new Environment($loader, [
@@ -26,20 +26,4 @@ class FrontController
             $name => $array,
         ]);
     }
-
-   /* public function TwigMultipleArray(string $template,  $array, $name): string
-    {
-        $loader = new FilesystemLoader(FRONT_VIEW);
-        $twig = new Environment($loader, [
-            'cache' => false,
-            'debug'=> true
-        ]);
-        $twig->addExtension(new DebugExtension());
-
-        echo $twig->render($template.'.twig', [
-            foreach ($array as $key => $value) {
-                $key => $value
-            }
-        ]);
-    }*/
 }

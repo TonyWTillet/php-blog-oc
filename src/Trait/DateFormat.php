@@ -8,7 +8,7 @@ class DateFormat
     {
         $this->format = $format;
     }
-    public function ModifyDateFormat(string $date): string
+    public function modifyDateFormat(string $date): string
     {
         return date($this->format, strtotime($date));
     }

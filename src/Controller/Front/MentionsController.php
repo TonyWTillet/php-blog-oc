@@ -26,6 +26,6 @@ class MentionsController extends FrontController
         $globals = $this->globalsQueries->getGlobals();
         $data['globals'] = $globals;
         $data['session'] = $_SESSION['user'];
-        require $this->Twig('mentions', $data, 'data');
+        require $this->twig('mentions', $data, 'data');
     }
 }

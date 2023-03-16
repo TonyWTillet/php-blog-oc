@@ -25,6 +25,6 @@ class InscriptionController extends FrontController
             $data['message'] = $this->addInscriptionsCommands->add($_POST);
         }
         $data['session'] = $_SESSION['user'];
-        require $this->Twig('inscription', $data, 'data');
+        require $this->twig('inscription', $data, 'data');
     }
 }

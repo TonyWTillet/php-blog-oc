@@ -40,20 +40,15 @@ class SendMail
             }
         }
         else $email->to($to);
-
         if(!empty($fichier)) {
             $email->attachFromPath($fichier);
         }
-
         try {
             $mailer->send($email);
             $success = true;
 
-
         } catch (Throwable $e) {
-
             $success = false;
-            dump($e->getMessage());
         }
 
         return $success;

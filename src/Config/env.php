@@ -1,6 +1,9 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting( E_ERROR);
+if (false !== ini_get('session.auto_start')) {
+    throw new \RuntimeException('This application starts sessions manually and will not work if PHP auto starts sessions. Please set session.autostart to false in your php.ini, and restart your server.');
+}
+/*ini_set('display_errors', 1);
+error_reporting( E_ERROR);*/
 
 $siteName= "Blog";
 $abspath = $_SERVER['DOCUMENT_ROOT'] . '/';

@@ -115,20 +115,14 @@ https://getcomposer.org/download/
     <tbody>
         <tr>
             <td>user@gmail.com</td>
-            <td align="center">openclassrooms-P5</td>
+            <td align="center">user</td>
             <td align="right">User</td>
         </tr>
         <tr>
             <td>admin@gmail.com</td>
-            <td align="center">openclassrooms-P5</td>
+            <td align="center">admin</td>
             <td align="right">Admin</td>
         </tr>
     </tbody>
 </table>
 
-## Step 8: Security in Production
-> Htacces
-
-
-# UML DIAGRAMM
-<a href="public/diagrammes">Click here</a>

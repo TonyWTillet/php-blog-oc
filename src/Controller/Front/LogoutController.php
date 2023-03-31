@@ -2,7 +2,7 @@
 
 namespace App\Controller\Front;
 
-use App\Trait\Logout;
+use App\Service\Logout;
 
 class LogoutController
 {

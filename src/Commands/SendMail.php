@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-use App\Trait\IsLocalhost;
+use App\Service\IsLocalhost;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\SendmailTransport;

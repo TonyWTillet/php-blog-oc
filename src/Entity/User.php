@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Trait\DateFormat;
+use App\Service\DateFormat;
 
 class User
 {

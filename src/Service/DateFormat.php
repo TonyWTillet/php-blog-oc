@@ -1,5 +1,5 @@
 <?php
-namespace App\Trait;
+namespace App\Service;
 class DateFormat
 {
     protected string $format;

@@ -6,7 +6,7 @@ use App\Queries\CategoryQueries;
 use App\Queries\GlobalsQueries;
 use App\Queries\PostQueries;
 use App\Queries\UserQueries;
-use App\Trait\DateFormat;
+use App\Service\DateFormat;
 use Exception;
 
 class IndexController extends FrontController

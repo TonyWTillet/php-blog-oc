@@ -3,11 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Commands\Add\AddContactCommands;
-use App\Queries\CategoryQueries;
 use App\Queries\GlobalsQueries;
-use App\Queries\PostQueries;
-use App\Queries\UserQueries;
-use App\Trait\DateFormat;
 use Exception;
 
 class ContactController extends FrontController

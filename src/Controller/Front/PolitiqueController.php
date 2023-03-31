@@ -2,11 +2,7 @@
 
 namespace App\Controller\Front;
 
-use App\Queries\CategoryQueries;
 use App\Queries\GlobalsQueries;
-use App\Queries\PostQueries;
-use App\Queries\UserQueries;
-use App\Trait\DateFormat;
 use Exception;
 
 class PolitiqueController extends FrontController

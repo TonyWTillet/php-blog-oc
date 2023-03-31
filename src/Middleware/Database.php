@@ -36,7 +36,7 @@ class Database
      *
      * @return array An array of objects of the class $class_name
      */
-    public function query($statement, $class_name): array
+    public function query(mixed $statement,mixed $class_name): array
     {
         $req = $this->getPDO()->query($statement);
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $class_name);
@@ -53,7 +53,7 @@ class Database
      *
      * @return array The result of the query.
      */
-    public function prepare(string $statement, $attributes, $class_name, $one = false): array
+    public function prepare(string $statement,mixed $attributes,mixed $class_name, $one = false): array
     {
         $req = $this->getPDO()->prepare($statement);
         $res = $req->execute($attributes);

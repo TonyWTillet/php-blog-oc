@@ -8,7 +8,7 @@ use PDOException;
 
 class User extends Database
 {
-    public function __construct($table = 'blog_users')
+    public function __construct(string $table = 'blog_users')
     {
         parent::__construct($table);
     }

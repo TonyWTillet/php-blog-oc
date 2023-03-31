@@ -18,7 +18,7 @@ class SendMail
         $this->localhost = new IsLocalhost();
     }
     // This will send a mail to the user
-    public function sendMail($sujet, $contenu, $to): bool
+    public function sendMail(string $sujet,mixed $contenu,string $to): bool
     {
         if($this->localhost->isLocalhost()) {
             $transport = Transport::fromDsn('smtp://a5cfb3f92396f6:6bc13201a0e7d4@smtp.mailtrap.io:2525?encryption=tls&auth_mode=login');

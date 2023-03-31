@@ -14,7 +14,7 @@ class AuthentificationService
      *
      * @return bool A boolean value.
      */
-    public function verifyAuthentification($controller): bool
+    public function verifyAuthentification(mixed $controller): bool
     {
         return $controller instanceof RequireAuhtentificationInterface;
     }

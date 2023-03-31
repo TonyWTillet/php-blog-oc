@@ -11,7 +11,7 @@ class Session
      *
      * @return array The session data is being returned.
      */
-    public function dataSession($session):array {
+    public function dataSession(array $session):array {
         return $_SESSION['user'] = $session;
     }
 }

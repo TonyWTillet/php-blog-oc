@@ -18,7 +18,7 @@ class GlobalsController extends BackController implements RequireAuhtentificatio
         $this->globalsCommands = new GlobalsEditCommands();
     }
 
-    public function index()
+    public function index(): void
     {
 
         $globals  = $this->globalsQueries->getGlobals();

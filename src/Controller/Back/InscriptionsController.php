@@ -21,16 +21,16 @@ class InscriptionsController extends BackController implements RequireAuhtentifi
         $this->userAcceptCommands = new UsersAcceptCommands();
     }
 
-    public function index()
+    public function index(): void
     {
         $inscriptions = $this->inscriptionsQueries->getInscriptions();
         require $this->twig('inscriptions', $inscriptions, 'inscriptions');
     }
 
-    public function accept() {
+    public function accept(): void {
         $this->userAcceptCommands->acceptUsers($_GET['id']);
     }
-    public function delete() {
+    public function delete(): void {
         $this->userCommands->deleteUser($_GET['id']);
     }
 }

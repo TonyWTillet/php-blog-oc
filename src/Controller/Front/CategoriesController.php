@@ -28,7 +28,7 @@ class CategoriesController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         $categories = $this->categoryQueries->getCategories();
         $globals = $this->globalsQueries->getGlobals();
@@ -42,7 +42,7 @@ class CategoriesController extends FrontController
         require $this->twig('category', $data, 'data');
     }
 
-    public function post()
+    public function post(): void
     {
         $category = $_GET['cat'];
         $categories = $this->categoryQueries->getCategoryById($category);

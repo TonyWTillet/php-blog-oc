@@ -23,24 +23,24 @@ class CategoryController extends BackController implements RequireAuhtentificati
         $this->categoryAddCommands = new CategoryAddCommands();
     }
 
-    public function index()
+    public function index(): void
     {
         $categories = $this->categoryService->getCategories();
         require $this->twig('category', $categories, 'categories');
     }
 
-    public function edit() {
+    public function edit(): void {
         $category= $this->categoryService->getCategoryById($_GET['id']);
         $this->categoryEditCommands->save($_POST['category_title'], $_GET['id']);
         require $this->twig('edit-category', $category, 'category');
     }
 
-    public function add() {
+    public function add(): void {
         $this->categoryAddCommands->add($_POST);
         require $this->twig('add-category', $error, 'error');
     }
 
-    public function delete() {
+    public function delete(): void {
         $this->categoryCommands->deleteCategory($_GET['id']);
     }
 }

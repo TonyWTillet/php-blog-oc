@@ -16,7 +16,7 @@ class ErrorController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         require $this->twig('404', $data, 'data');
     }

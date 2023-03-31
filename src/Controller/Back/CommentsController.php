@@ -22,22 +22,22 @@ class CommentsController extends BackController implements RequireAuhtentificati
         $this->commentsAcceptCommands = new CommentsAcceptCommands();
     }
 
-    public function index()
+    public function index(): void
     {
         $comments = $this->commentQueries->getComments();
         require $this->twig('comments', $comments, 'comments');
     }
 
-    public function validate()
+    public function validate(): void
     {
         $comments = $this->commentQueries->getCommentsValidate();
         require $this->twig('comments_validate', $comments, 'comments');
     }
 
-    public function accept() {
+    public function accept(): void {
         $this->commentsAcceptCommands->acceptComments($_GET['id']);
     }
-    public function delete() {
+    public function delete(): void {
         $this->commentsCommands->deleteComment($_GET['id']);
     }
 }

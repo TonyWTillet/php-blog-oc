@@ -19,7 +19,7 @@ class InscriptionController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         if (!empty($_POST)) {
             $data['message'] = $this->addInscriptionsCommands->add($_POST);

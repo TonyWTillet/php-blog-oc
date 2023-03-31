@@ -29,7 +29,7 @@ class IndexController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         $categories = $this->categoryQueries->getCategories();
         $globals = $this->globalsQueries->getGlobals();

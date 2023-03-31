@@ -31,7 +31,7 @@ class ArticleController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         $url = explode('/', $_SERVER['REQUEST_URI']);
         if (strpos($url[2], "-") !== false) {

@@ -24,7 +24,7 @@ class ContactController extends FrontController
     /**
      * @throws Exception
      */
-    public function index()
+    public function index(): void
     {
         $globals = $this->globalsQueries->getGlobals();
         $data['globals'] = $globals;

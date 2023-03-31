@@ -33,7 +33,7 @@ class ArticlesController extends BackController implements RequireAuhtentificati
     /**
      * It gets all the posts from the database and displays them on the page
      */
-    public function index()
+    public function index(): void
     {
 
         $articles = $this->postQueries->getPosts();
@@ -42,19 +42,19 @@ class ArticlesController extends BackController implements RequireAuhtentificati
         require $this->twig('articles', $articles, 'articles');
     }
 
-    public function edit() {
+    public function edit(): void {
         $article= $this->postQueries->getPostById($_GET['id']);
         $this->postsEditCommands->save($_POST, $_GET['id']);
         require $this->twig('edit-article', $article, 'article');
     }
 
-    public function add() {
+    public function add(): void {
         $categories = $this->categoryQueries->getCategories();
         $this->addPostsCommands->add($_POST, $_SESSION['user']['id']);
         require $this->twig('add-article', $categories, 'categories');
     }
 
-    public function delete() {
+    public function delete(): void {
         $this->postCommands->deletePost($_GET['id']);
     }
 }

@@ -20,7 +20,7 @@ class DashboardController extends BackController implements RequireAuhtentificat
     /**
      * @throws \Exception
      */
-    public function index()
+    public function index(): void
     {
         $data['categories'] = $this->counter->getRowsNumber('blog_categories');
         $data['posts'] = $this->counter->getRowsNumber('blog_posts');

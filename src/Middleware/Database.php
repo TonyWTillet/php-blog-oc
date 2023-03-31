@@ -53,7 +53,7 @@ class Database
      *
      * @return array The result of the query.
      */
-    public function prepare(string $statement,mixed $attributes,mixed $class_name, bool $one = false): array
+    public function prepare(string $statement,mixed $attributes,mixed $class_name, bool $one = false): array|bool
     {
         $req = $this->getPDO()->prepare($statement);
         $res = $req->execute($attributes);

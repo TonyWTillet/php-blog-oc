@@ -12,7 +12,7 @@ class User
     private string $last_name;
     private string $email;
     private string $created_at;
-    private string $flag;
+    private int $flag;
 
     private dateFormat $dateFormat;
     private string $role;
